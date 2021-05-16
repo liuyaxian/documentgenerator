@@ -22,8 +22,8 @@ import java.util.UUID;
 
 public class DocumentGeneratorServiceImpl {
 
-    // 3117首页新发基金查询
-    private static final  String bizcode = "2103";
+    // 3117 首页新发基金查询
+    private static final  String bizcode = "3117";
     private static final  String bizcodeDesc = "认申购接口";
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
     private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
