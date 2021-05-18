@@ -4,11 +4,11 @@ package service;
 import com.zlfund.security.DESEncHelper;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.commons.httpclient.NameValuePair;
 
 import java.io.*;
 import java.sql.Connection;
@@ -16,13 +16,16 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.UUID;
+import java.util.*;
 
 public class DocumentGeneratorServiceImpl {
 
     // 3117 首页新发基金查询
+    // <!-- 3119 首页人气榜单查询 -->
+    // 3121 策略选基查询
+    // 3129 首页推荐栏目
+    // 3131 众禄严选
+    // <!--  3133 公募私募组合收益走势图   -->
     private static final  String bizcode = "3117";
     private static final  String bizcodeDesc = "认申购接口";
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
@@ -32,20 +35,72 @@ public class DocumentGeneratorServiceImpl {
     private static final  String version = "4.0";
     private static final  String appversion = "4.3.7";
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001881673";
+        String custNo =  "1001883763";
         // 需要数据交易密码的接口
-        String tradeacco = "1001544562";
-        String passwd = "aaa111";
+        String tradeacco = "";
+        // 交易密码 111111
+        String passwd = "";
+        // 1001546198	1001883763
         requestUrl(custNo, tradeacco, passwd);
     }
-
 
     // body 组装
     public static JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
-        if ("3117".equals(bizcode)){
+        if ("3135".equals(bizcode)){
+            bodyJson.put("fundids", "XZGF00");
+        }
+        if ("5235".equals(bizcode)){
+            bodyJson.put("sortfield", "period");
+            bodyJson.put("fundid", "");
+            bodyJson.put("sortmode", "DESC");
+        }
+        if ("2307".equals(bizcode)){
+//            "mctcustno": "1001883548",
+//                    "orderbyfield": "perlimitamt",
+//                    "tradeType": "ZL"
+            bodyJson.put("mctcustno", "1001883548");
+            bodyJson.put("orderbyfield", "perlimitamt");
+            bodyJson.put("tradeType", "ZL");
+        }
+        if ("2401".equals(bizcode)){
+            bodyJson.put("inner_code", 1000009983);
+            bodyJson.put("fundid", "003009");
+            bodyJson.put("balancedetailtype", "INC");
+            bodyJson.put("fundtype", "0");
+            bodyJson.put("period", "1M");
+            bodyJson.put("mctcustno", "1001881549");
+            bodyJson.put("tradeacco", "1001544877");
+        }
+
+
+
+        if ("3123".equals(bizcode)){
+            bodyJson.put("code", "CLXJ_JNJ");
+        }
+        if ("3133".equals(bizcode)){
+            List<Map> mapList = new ArrayList<>();
+            Map map = new HashMap<>();
+            map.put("fundId","XZGF00");
+            map.put("yieldPeriod","RET_1M");
+            mapList.add(map);
+//            Map map2 = new HashMap<>();
+//            map2.put("fundId","002143");
+//            map2.put("yieldPeriod","RET_5Y");
+//            mapList.add(map2);
+//            Map map3 = new HashMap<>();
+//            map3.put("fundId","XZGF00");
+//            map3.put("yieldPeriod","RET_5Y");
+//            mapList.add(map3);
+//
+//            Map map4 = new HashMap<>();
+//            map4.put("fundId","SCW165");
+//            map4.put("yieldPeriod","RET_5Y");
+//            mapList.add(map4);
+
+            bodyJson.put("fundarr", mapList);
         }
         if ("2309".equals(bizcode)){
             bodyJson.put("mctcustno", custNo);
@@ -68,7 +123,9 @@ public class DocumentGeneratorServiceImpl {
             bodyJson.put("paymentmethod", "B");
             bodyJson.put("opertime", "20210301084435");
         }
-
+        if ("3117".equals(bizcode)){
+            bodyJson.put("code", "");
+        }
         return bodyJson;
     }
 
@@ -109,7 +166,8 @@ public class DocumentGeneratorServiceImpl {
         JSONObject bodyJson = (JSONObject) msg.get("body");
         setRequestValue(bodyJson,  sb, " body/");
         sb.append("\n\n\n"+"**响应参数**" + "\n\n\n");
-        sb.append("bizcode:" + Integer.parseInt(bizcode)+1 + "\n\n\n");
+        int code = Integer.parseInt(bizcode) + 1;
+        sb.append("bizcode:" +  code + "\n\n\n");
         sb.append("```JSON" + "\n\n");
         sb.append("响应Json:" + "\n");
         sb.append(formatJson(method.getResponseBodyAsString())+ "\n\n\n");
@@ -132,7 +190,7 @@ public class DocumentGeneratorServiceImpl {
      * @throws IOException
      */
     public static void FileWriter(String buff) throws IOException {
-        File file = new File("E:\\apidocs\\" +bizcodeDesc+".md");
+        File file = new File("E:\\apidocs\\" + bizcode +bizcodeDesc+".md");
         if (!file.exists()) {
             // 1，先得到文件的上级目录，并创建上级目录
             file.getParentFile().mkdirs();
@@ -219,14 +277,21 @@ public class DocumentGeneratorServiceImpl {
         }
         if (bodyJson.containsKey("datalist")){
             JSONArray list = bodyJson.getJSONArray("datalist");
+            if (list == null){
+                 return;
+            }
             JSONObject bodyJson1 =  list.getJSONObject(0);
+
             setTableValue(bodyJson1, sb,  " body/datalist/");
-            JSONArray list2 = bodyJson1.getJSONArray("tabInfos");
-            JSONObject bodyJson2 =  list2.getJSONObject(0);
-            setTableValue(bodyJson2, sb,  " body/datalist/tabInfos/");
-            JSONArray list3 = bodyJson2.getJSONArray("fundInfos");
-            JSONObject bodyJson3 =  list3.getJSONObject(0);
-            setTableValue(bodyJson3, sb,  " body/datalist/tabInfos/fundInfos/");
+
+//            JSONObject bodyJson1 =  list.getJSONObject(0);
+//            setTableValue(bodyJson1, sb,  " body/datalist/");
+//            JSONArray list2 = bodyJson1.getJSONArray("tabInfos");
+//            JSONObject bodyJson2 =  list2.getJSONObject(0);
+//            setTableValue(bodyJson2, sb,  " body/datalist/tabInfos/");
+//            JSONArray list3 = bodyJson2.getJSONArray("fundInfos");
+//            JSONObject bodyJson3 =  list3.getJSONObject(0);
+//            setTableValue(bodyJson3, sb,  " body/datalist/tabInfos/fundInfos/");
         } else {
             setTableValue(bodyJson, sb,  " body/");
         }
@@ -308,11 +373,18 @@ public class DocumentGeneratorServiceImpl {
         reqJson.put("msg", msgJson);
         // 签名
         reqJson.put("signtype", "m");
+        //  ef2c0ef8385db0effdda73fad2cf32b0
         reqJson.put("sign", DigestUtils.md5Hex((msgJson.toString() + "ef2c0ef8385db0effdda73fad2cf32b0")));
         return reqJson;
     }
 
-    //  auth 鉴权json组装
+    /**
+     * auth 鉴权json组装
+     * @param custNo
+     * @param tradeacco
+     * @param passwd
+     * @return
+     */
     public static JSONObject setAuthJson(String custNo, String tradeacco, String passwd){
         JSONObject authJson = new JSONObject();
         if(StringUtils.isBlank(custNo)){
