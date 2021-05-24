@@ -26,8 +26,8 @@ public class DocumentGeneratorServiceImpl {
     // 3129 首页推荐栏目
     // 3131 众禄严选
     // <!--  3133 公募私募组合收益走势图   -->
-    private static final  String bizcode = "3117";
-    private static final  String bizcodeDesc = "认申购接口";
+    private static final  String bizcode = "3135";
+    private static final  String bizcodeDesc = "313531353135";
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
     private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
     //        private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
@@ -49,6 +49,25 @@ public class DocumentGeneratorServiceImpl {
     // body 组装
     public static JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
+        // 个人开户3001
+        if ("3137".equals(bizcode)){
+            bodyJson.put("personName", "刘思");
+            bodyJson.put("identNo", "1234567890");
+            bodyJson.put("mobilePhone", "17666100076");
+            bodyJson.put("authenticationMode", "公安部");
+        }
+        // 发送验证码3101
+        if ("3141".equals(bizcode)){
+            bodyJson.put("userId", "XZGF00");
+            bodyJson.put("projectCode", "10000001");
+        }
+        // 确认验证码3102
+        if ("3143".equals(bizcode)){
+            bodyJson.put("userId", "XZGF00");
+            bodyJson.put("projectCode", "10000001");
+            bodyJson.put("checkCode", "10000001");
+        }
+
         if ("3135".equals(bizcode)){
             bodyJson.put("fundids", "XZGF00");
         }
@@ -235,7 +254,6 @@ public class DocumentGeneratorServiceImpl {
      * @param bodyJson
      * @param sb
      * @param dataStr
-     * @param zlass
      */
 
     public static void setRequestValue(JSONObject bodyJson, StringBuffer sb,  String dataStr){
