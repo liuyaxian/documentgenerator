@@ -58,24 +58,15 @@ public class DocumentGeneratorServiceImpl {
         }
         // 发送验证码3101
         if ("3141".equals(bizcode)){
-<<<<<<< HEAD
             bodyJson.put("userId", "C31FD569690C4718E05311016B0AF1FB");
-=======
             bodyJson.put("userId", "XZGF00");
->>>>>>> 5a09201c0ef3b527539c7f5235f0c8ec84d125ae
             bodyJson.put("projectCode", "10000001");
         }
         // 确认验证码3102
         if ("3143".equals(bizcode)){
-<<<<<<< HEAD
             bodyJson.put("userId", "C31FD569690C4718E05311016B0AF1FB");
             bodyJson.put("projectCode", "10000001");
             bodyJson.put("checkCode", "411026");
-=======
-            bodyJson.put("userId", "XZGF00");
-            bodyJson.put("projectCode", "10000001");
-            bodyJson.put("checkCode", "10000001");
->>>>>>> 5a09201c0ef3b527539c7f5235f0c8ec84d125ae
         }
 
         if ("3135".equals(bizcode)){
