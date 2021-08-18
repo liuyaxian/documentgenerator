@@ -46,7 +46,7 @@ public class DesUtils {
             Cipher cipher = Cipher.getInstance("DES");
             cipher.init(Cipher.ENCRYPT_MODE, key, sr);
             // 加密，并把字节数组编码成字符串
-            encryptedData = new sun.misc.BASE64Encoder().encode(cipher.doFinal(data.getBytes()));
+//            encryptedData = BASE64Encoder().encode(cipher.doFinal(data.getBytes()));
         } catch (Exception e) {
 //            log.error("加密错误，错误信息：", e);  加密后UpSbNP/AeM5AfGnWB21HZQ== UpSbNP/AeM5AfGnWB21HZQ==
             throw new RuntimeException("加密错误，错误信息：", e);

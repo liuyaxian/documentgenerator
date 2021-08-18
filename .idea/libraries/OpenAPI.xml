@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="OpenAPI">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../Open/OpenAPI" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../Open/OpenAPI/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Open/OpenAPI/src/test/java" />
+    </SOURCES>
+  </library>
+</component>

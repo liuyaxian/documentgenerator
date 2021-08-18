@@ -25,8 +25,8 @@ public class ZLappHomeDateAuto {
     // 3117 首页新发基金查询
     public void homeXfjjInfo() throws IOException {
     }
-    public void baseService(String bizCode, String custNo, String tradeacco, String passwd) throws IOException {
-        JSONObject reqJson = documentGeneratorServiceImpl.createReqJson(bizCode, custNo, tradeacco, passwd);
+    public void baseService(String bizCode, String custNo, String tradeacco, String passwd, JSONObject requestBodyJson) throws IOException {
+        JSONObject reqJson = documentGeneratorServiceImpl.createReqJson(bizCode, custNo, tradeacco, passwd, requestBodyJson);
         NameValuePair[] param = {new NameValuePair("data", reqJson.toString())};
         PostMethod method = new PostMethod(url);
         method.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");

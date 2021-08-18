@@ -1,14 +1,13 @@
 package service;
 
 
-import com.zlfund.security.DESEncHelper;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.PostMethod;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 
 import java.io.*;
 import java.sql.Connection;
@@ -20,31 +19,24 @@ import java.util.*;
 
 public class DocumentGeneratorServiceImpl {
 
-    // 3117 首页新发基金查询
-    // <!-- 3119 首页人气榜单查询 -->
-    // 3121 策略选基查询
-    // 3129 首页推荐栏目
-    // 3131 众禄严选
-    // <!--  3133 公募私募组合收益走势图   -->
-    private static final  String bizcode = "3135";
-    private static final  String bizcodeDesc = "313531353135";
-//    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
-    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
+    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
+//    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
     //        private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
     private static final  String mctcode = "1000";
     private static final  String version = "4.0";
     private static final  String appversion = "4.3.7";
 
-    public static void main(String[] args) throws IOException, Exception {
-        // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883763";
-        // 需要数据交易密码的接口
-        String tradeacco = "";
-        // 交易密码 111111
-        String passwd = "";
-        // 1001546198	1001883763
-        requestUrl(custNo, tradeacco, passwd);
-    }
+//    public static void main(String[] args) throws IOException, Exception {
+//        // 需要鉴权的接口 custNo 不为为空
+//        String custNo =  "1001883763";
+//        // 需要数据交易密码的接口
+//        String tradeacco = "";
+//        // 交易密码 111111
+//        String passwd = "";
+//        // 1001546198	1001883763
+//        requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc);
+//    }
+
 
     // body 组装
     public static JSONObject setBody(String bizcode, String custNo){
@@ -103,6 +95,8 @@ public class DocumentGeneratorServiceImpl {
         if ("3133".equals(bizcode)){
             List<Map> mapList = new ArrayList<>();
             Map map = new HashMap<>();
+            map.put("fundId","161725");
+            map.put("yieldPeriod","RET_1Y");
             map.put("fundId","XZGF00");
             map.put("yieldPeriod","RET_1M");
             mapList.add(map);
@@ -125,6 +119,7 @@ public class DocumentGeneratorServiceImpl {
         if ("2309".equals(bizcode)){
             bodyJson.put("mctcustno", custNo);
         }
+        //  3131 众禄严选
         if ("3131".equals(bizcode)){
             bodyJson.put("mctcustno", custNo);
         }
@@ -144,16 +139,16 @@ public class DocumentGeneratorServiceImpl {
             bodyJson.put("opertime", "20210301084435");
         }
         if ("3117".equals(bizcode)){
-            bodyJson.put("code", "");
+            // XFJJ XFJJ_SY
+            bodyJson.put("code", "XFJJSY");
         }
         return bodyJson;
     }
 
 
 
-
-    public static void requestUrl(String custno, String tradeacco, String passwd) throws IOException {
-        JSONObject reqJson = createReqJson(bizcode, custno, tradeacco, passwd);
+    public static void requestUrl(String custno, String tradeacco, String passwd, String bizcode, String bizcodeDesc,JSONObject requestBodyJson) throws IOException {
+        JSONObject reqJson = createReqJson(bizcode, custno, tradeacco, passwd, requestBodyJson);
 
         System.out.println("请求json:" + reqJson.toString());
         NameValuePair[] param = { new NameValuePair("data", reqJson.toString()) };
@@ -199,7 +194,7 @@ public class DocumentGeneratorServiceImpl {
 //        JSONObject msg1 = (JSONObject) jsonObj.get("msg");
 //        JSONObject bodyJson1 = (JSONObject) msg1.get("body");
 //        setResponsValue(bodyJson1, sb);
-//        FileWriter(sb.toString());
+//        FileWriter(sb.toString(),bizcode , bizcodeDesc);
         System.out.println(sb.toString());
     }
 
@@ -209,7 +204,7 @@ public class DocumentGeneratorServiceImpl {
      * @param buff
      * @throws IOException
      */
-    public static void FileWriter(String buff) throws IOException {
+    public static void FileWriter(String buff, String bizcode, String bizcodeDesc) throws IOException {
         File file = new File("E:\\apidocs\\" + bizcode +bizcodeDesc+".md");
         if (!file.exists()) {
             // 1，先得到文件的上级目录，并创建上级目录
@@ -230,7 +225,7 @@ public class DocumentGeneratorServiceImpl {
      * @param buff
      * @throws IOException
      */
-    public static void inputStream(byte[] buff) throws IOException {
+    public static void inputStream(byte[] buff,String bizcode, String bizcodeDesc) throws IOException {
         // 创建文件
         File file = new File("E:\\apidocs\\" + bizcode + bizcodeDesc+".txt");
         if (!file.exists()){
@@ -383,10 +378,10 @@ public class DocumentGeneratorServiceImpl {
     }
 
 
-    public static JSONObject createReqJson(String bizCode, String custNo, String tradeacco, String passwd) {
+    public static JSONObject createReqJson(String bizCode, String custNo, String tradeacco, String passwd, JSONObject bodyJson) {
         JSONObject msgJson = new JSONObject();
-        msgJson.put("head", setHeadJson());
-        msgJson.put("body", setBody(bizCode, custNo));
+        msgJson.put("head", setHeadJson(bizCode));
+        msgJson.put("body", bodyJson);
         msgJson.put("auth", setAuthJson(custNo, tradeacco, passwd));
         JSONObject reqJson = new JSONObject();
         reqJson.put("msg", msgJson);
@@ -413,9 +408,10 @@ public class DocumentGeneratorServiceImpl {
         authJson.put("mctcustno", custNo);
         authJson.put("sessionkey", getSessionkey(custNo));
         authJson.put("tradeacco", tradeacco);
-        DESEncHelper des = DESEncHelper.getInstance();
+//        DESEncHelper des = DESEncHelper.getInstance();
         try {
-            authJson.put("passwd", des.encrypt(passwd));
+//            authJson.put("passwd", des.encrypt(passwd));
+
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -423,7 +419,7 @@ public class DocumentGeneratorServiceImpl {
     }
 
     // head 组装
-    public static JSONObject setHeadJson(){
+    public static JSONObject setHeadJson(String  bizcode){
         JSONObject headJson = new JSONObject();
         headJson.put("version", version);
         headJson.put("appversion", appversion);

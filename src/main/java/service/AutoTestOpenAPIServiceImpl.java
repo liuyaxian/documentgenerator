@@ -73,7 +73,7 @@ public class AutoTestOpenAPIServiceImpl extends  DocumentGeneratorServiceImpl{
                 Row r = sheet.getRow(row);
                 paramsList.add(r.getCell(2).toString());
                 System.out.println(r.getCell(4));
-                r.getCell(4).setCellValue(requestUrl(custNo,  tradeacco,  passwd,  r.getCell(2).toString()).toString());
+                r.getCell(4).setCellValue(requestUrls(custNo,  tradeacco,  passwd,  r.getCell(2).toString(), bizcode).toString());
 
                 //获取输出流
                 out=new FileOutputStream(xlsFile);
@@ -87,18 +87,14 @@ public class AutoTestOpenAPIServiceImpl extends  DocumentGeneratorServiceImpl{
                 out.flush();
                 //关闭流和工作簿
                 out.close();
-                workbook.close();
-                workbook1.close();
-
             }
         }
         return paramsList;
     }
 
 
-
-    public static JSONObject  requestUrl(String custno, String tradeacco, String passwd, String params) throws IOException {
-        JSONObject reqJson = createReqJson(custno, tradeacco, passwd, params);
+    public static JSONObject  requestUrls(String custno, String tradeacco, String passwd, String params, String bizcode) throws IOException {
+        JSONObject reqJson = createReqJson(custno, tradeacco, passwd, params, bizcode);
 //        System.out.println("请求json:" + reqJson.toString());
         NameValuePair[] param = { new NameValuePair("data", reqJson.toString()) };
         PostMethod method = new PostMethod(url);
@@ -154,9 +150,9 @@ public class AutoTestOpenAPIServiceImpl extends  DocumentGeneratorServiceImpl{
        return JSONObject.fromObject(params);
     }
 
-    public static JSONObject createReqJson(String custNo, String tradeacco, String passwd, String params) {
+    public static JSONObject createReqJson(String custNo, String tradeacco, String passwd, String params, String bizcode) {
         JSONObject msgJson = new JSONObject();
-        msgJson.put("head", setHeadJson());
+        msgJson.put("head", setHeadJson(bizcode));
         msgJson.put("body", setBody(params));
         msgJson.put("auth", setAuthJson(custNo, tradeacco, passwd));
         JSONObject reqJson = new JSONObject();
