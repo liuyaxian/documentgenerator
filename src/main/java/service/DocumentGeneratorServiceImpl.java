@@ -19,12 +19,15 @@ import java.util.*;
 
 public class DocumentGeneratorServiceImpl {
 
+    // 测试环境
     private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
+    // 开发环境
 //    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
+
     //        private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
     private static final  String mctcode = "1000";
     private static final  String version = "4.0";
-    private static final  String appversion = "4.3.7";
+    private static final  String appversion = "4.4.5";
 
 //    public static void main(String[] args) throws IOException, Exception {
 //        // 需要鉴权的接口 custNo 不为为空
@@ -190,8 +193,8 @@ public class DocumentGeneratorServiceImpl {
         sb.append("| **字段名称**   | **Json path** | **格式** | **必填** | **备注**  |" + "\n");
         sb.append("| -------------- | ------------------------------ | -------- | -------- | ------- |" + "\n");
         String responseStr = method.getResponseBodyAsString();
-//        JSONObject jsonObj = JSONObject.fromObject(responseStr);
-//        JSONObject msg1 = (JSONObject) jsonObj.get("msg");
+        JSONObject jsonObj = JSONObject.fromObject(responseStr);
+        JSONObject msg1 = (JSONObject) jsonObj.get("msg");
 //        JSONObject bodyJson1 = (JSONObject) msg1.get("body");
 //        setResponsValue(bodyJson1, sb);
 //        FileWriter(sb.toString(),bizcode , bizcodeDesc);
