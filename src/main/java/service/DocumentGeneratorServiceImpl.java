@@ -20,9 +20,9 @@ import java.util.*;
 public class DocumentGeneratorServiceImpl {
 
     // 测试环境
-    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
+//    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
     // 开发环境
-//    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
+    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
 
     //        private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
     private static final  String mctcode = "1000";
@@ -414,7 +414,8 @@ public class DocumentGeneratorServiceImpl {
 //        DESEncHelper des = DESEncHelper.getInstance();
         try {
 //            authJson.put("passwd", des.encrypt(passwd));
-
+            // ecc4ff67a0ef8282    111111
+            authJson.put("passwd", "ecc4ff67a0ef8282");
         }catch (Exception e){
             e.printStackTrace();
         }
