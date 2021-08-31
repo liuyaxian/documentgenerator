@@ -193,6 +193,10 @@ public class DocumentGeneratorServiceImpl {
         sb.append("| **字段名称**   | **Json path** | **格式** | **必填** | **备注**  |" + "\n");
         sb.append("| -------------- | ------------------------------ | -------- | -------- | ------- |" + "\n");
         String responseStr = method.getResponseBodyAsString();
+        if (StringUtils.isBlank(responseStr)){
+            System.out.println("为空！");
+            return ;
+        }
         JSONObject jsonObj = JSONObject.fromObject(responseStr);
         JSONObject msg1 = (JSONObject) jsonObj.get("msg");
 //        JSONObject bodyJson1 = (JSONObject) msg1.get("body");

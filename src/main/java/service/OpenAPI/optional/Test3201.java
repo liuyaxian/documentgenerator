@@ -33,21 +33,31 @@ public class Test3201   extends DocumentGeneratorServiceImpl {
         List<FundYield> yieldList = new ArrayList<>();
 
         FundYield fundYield = new FundYield();
-        fundYield.setFundId("000771");
-        fundYield.setYieldPeriod("RET_1W");
+        fundYield.setFundId("002190");
+        fundYield.setYieldPeriod("RET_1M");
         yieldList.add(fundYield);
 
 
         FundYield fundYieldXZG = new FundYield();
         fundYieldXZG.setFundId("XZGF00");
-        fundYieldXZG.setYieldPeriod("RET_1Y");
+        fundYieldXZG.setYieldPeriod("RET_1M");
         yieldList.add(fundYieldXZG);
 
 
         FundYield fundYieldfp = new FundYield();
-        fundYieldfp.setFundId("SCW165");
-        fundYieldfp.setYieldPeriod("RET_1W");
+        fundYieldfp.setFundId("000137");
+        fundYieldfp.setYieldPeriod("RET_1M");
         yieldList.add(fundYieldfp);
+
+        FundYield fundYield1 = new FundYield();
+        fundYield1.setFundId("006444");
+        fundYield1.setYieldPeriod("RET_1M");
+        yieldList.add(fundYield1);
+
+        FundYield fundYield3 = new FundYield();
+        fundYield3.setFundId("040027");
+        fundYield3.setYieldPeriod("RET_1M");
+        yieldList.add(fundYield3);
 
 
         bodyJson.put("fundarr", yieldList);

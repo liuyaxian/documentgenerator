@@ -29,7 +29,7 @@ public class Test3189  extends DocumentGeneratorServiceImpl {
 
     public static JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
-        String str = "[{'fundId':'332211'},{'fundId':'112233'}]";
+        String str = "[{'fundId':'161826'}]";
         JSONArray jsonArray = JSONArray.fromObject(str);
         JSONArray.toList(jsonArray, new CustOptionalFund(),  new JsonConfig());
 
@@ -37,6 +37,7 @@ public class Test3189  extends DocumentGeneratorServiceImpl {
 //        list.add(JSON.toJSON(jsonArray));
 //        bodyJson.put("custOptionalGroup", list);
         bodyJson.put("custOptionalFund", JSONArray.toList(jsonArray, new CustOptionalFund(),  new JsonConfig()));
+        bodyJson.put("groupIds", "-1");
         return bodyJson;
     }
 }

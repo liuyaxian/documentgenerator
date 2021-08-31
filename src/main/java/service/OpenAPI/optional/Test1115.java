@@ -5,14 +5,14 @@ import service.DocumentGeneratorServiceImpl;
 
 import java.io.IOException;
 
-public class Test3191  extends DocumentGeneratorServiceImpl {
+public class Test1115 extends DocumentGeneratorServiceImpl {
 
-    private static final  String bizcode = "3191";
-    private static final  String bizcodeDesc = "获取自选管理列表";
+    private static final  String bizcode = "1115";
+    private static final  String bizcodeDesc = "自选功能";
 
     public static void main(String[] args) throws IOException, Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883545";
+        String custNo =  "1001881673";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
@@ -25,8 +25,9 @@ public class Test3191  extends DocumentGeneratorServiceImpl {
     public static JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
 
-        bodyJson.put("groupId", 109);
+        bodyJson.put("mctcustno","1001881673");
+        bodyJson.put("operatetype","0");
+        bodyJson.put("expand","1");
         return bodyJson;
     }
-
 }
