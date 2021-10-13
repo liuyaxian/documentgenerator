@@ -18,6 +18,7 @@ public class Test3189  extends DocumentGeneratorServiceImpl {
     public static void main(String[] args) throws IOException, Exception {
         // 需要鉴权的接口 custNo 不为为空
         String custNo =  "1001881673";
+
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
@@ -30,6 +31,7 @@ public class Test3189  extends DocumentGeneratorServiceImpl {
     public static JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
         String str = "[{'fundId':'161826'}]";
+、
         JSONArray jsonArray = JSONArray.fromObject(str);
         JSONArray.toList(jsonArray, new CustOptionalFund(),  new JsonConfig());
 

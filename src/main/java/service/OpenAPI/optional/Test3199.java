@@ -10,7 +10,9 @@ public class Test3199    extends DocumentGeneratorServiceImpl {
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
+
         String custNo =  "1001881673";
+
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
@@ -23,6 +25,7 @@ public class Test3199    extends DocumentGeneratorServiceImpl {
     public static JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
         bodyJson.put("groupId", 76);
+
         //  万份收益 tenthou_unit_incm
         //     * 7日年化 year_yield_by7d
         //     * 14日年化 year_yield_by14d
@@ -45,7 +48,15 @@ public class Test3199    extends DocumentGeneratorServiceImpl {
         //     * 净值变动  unitNetChngPct
 
 
+
         bodyJson.put("sortfield", "unitNetChngPct");
+
+
+        bodyJson.put("sortfield", "unitNetChngPct");
+
+        bodyJson.put("sortfield", "");
+
+
         // DESC  A
         bodyJson.put("sortmode","ASC");
         return bodyJson;

@@ -16,8 +16,6 @@ T
 $src/main/java/service/io/io笔记.md,e\c\ec0074688c0210a009b2ad6557e011afe4d81a3e
 l
 <src/main/java/service/OpenAPI/optional/CustOptionalFund.java,6\f\6fdacb10153015bcac3157b77245731ac730936a
-�
-Rsrc/main/java/service/OpenAPI/optional/Test3185MigrateFundToCustOptionalGroup.java,a\7\a7792af9a5adaa47beecc61602fda98240463981
 
 Osrc/main/java/service/OpenAPI/optional/Test3175BatchUpdateCustOptionalFund.java,e\f\ef14d3f054d61b56b71eb4cd1f5808da7548ab52
 d

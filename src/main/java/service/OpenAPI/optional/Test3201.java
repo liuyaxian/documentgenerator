@@ -32,10 +32,46 @@ public class Test3201   extends DocumentGeneratorServiceImpl {
         JSONObject bodyJson = new JSONObject();
         List<FundYield> yieldList = new ArrayList<>();
 
+
+
+
         FundYield fundYield = new FundYield();
         fundYield.setFundId("002190");
         fundYield.setYieldPeriod("RET_1M");
         yieldList.add(fundYield);
+
+//        FundYield fundYield = new FundYield();
+//        fundYield.setFundId("110011");
+//        fundYield.setYieldPeriod("RET_1M");
+//        yieldList.add(fundYield);
+//
+//
+//        FundYield fundYield1 = new FundYield();
+//        fundYield1.setFundId("110022");
+//        fundYield1.setYieldPeriod("RET_1M");
+//        yieldList.add(fundYield1);
+//
+//        FundYield fundYield3 = new FundYield();
+//        fundYield3.setFundId("000640");
+//        fundYield3.setYieldPeriod("RET_1M");
+//        yieldList.add(fundYield3);
+//
+//        FundYield fundYieldXZG = new FundYield();
+//        fundYieldXZG.setFundId("XZGF00");
+//        fundYieldXZG.setYieldPeriod("RET_1M");
+//        yieldList.add(fundYieldXZG);
+//
+//        FundYield fundYieldXZG1 = new FundYield();
+//        fundYieldXZG1.setFundId("XZGH00");
+//        fundYieldXZG1.setYieldPeriod("RET_1M");
+//        yieldList.add(fundYieldXZG1);
+
+
+        FundYield fundYieldXZG3 = new FundYield();
+        fundYieldXZG3.setFundId("XZG600");
+        fundYieldXZG3.setYieldPeriod("RET_3M");
+        yieldList.add(fundYieldXZG3);
+
 
 
         FundYield fundYieldXZG = new FundYield();
@@ -58,6 +94,15 @@ public class Test3201   extends DocumentGeneratorServiceImpl {
         fundYield3.setFundId("040027");
         fundYield3.setYieldPeriod("RET_1M");
         yieldList.add(fundYield3);
+
+
+
+//        FundYield fundYieldfp = new FundYield();
+//        fundYieldfp.setFundId("000137");
+//        fundYieldfp.setYieldPeriod("RET_1M");
+//        yieldList.add(fundYieldfp);
+
+
 
 
         bodyJson.put("fundarr", yieldList);
