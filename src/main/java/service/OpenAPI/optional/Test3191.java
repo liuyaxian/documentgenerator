@@ -13,7 +13,6 @@ public class Test3191  extends DocumentGeneratorServiceImpl {
     public static void main(String[] args) throws IOException, Exception {
         // 需要鉴权的接口 custNo 不为为空
         String custNo =  "1001883545";
-、
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111

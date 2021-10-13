@@ -31,7 +31,7 @@ public class Test3189  extends DocumentGeneratorServiceImpl {
     public static JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
         String str = "[{'fundId':'161826'}]";
-、
+
         JSONArray jsonArray = JSONArray.fromObject(str);
         JSONArray.toList(jsonArray, new CustOptionalFund(),  new JsonConfig());
 
