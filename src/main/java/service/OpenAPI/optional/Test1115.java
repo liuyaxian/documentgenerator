@@ -14,7 +14,7 @@ public class Test1115 extends DocumentGeneratorServiceImpl {
         // 需要鉴权的接口 custNo 不为为空
 
 
-        String custNo =  "1001881673";
+        String custNo =  "1001883516";
 
 
         // 需要数据交易密码的接口

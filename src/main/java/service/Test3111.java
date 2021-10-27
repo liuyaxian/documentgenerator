@@ -1,15 +1,11 @@
-package service.OpenAPI.optional;
+package service;
 
 import net.sf.json.JSONObject;
-import service.DocumentGeneratorServiceImpl;
 
-/**
- * 3171 获取自选栏目的分组标签
- */
-public class Test3171 extends DocumentGeneratorServiceImpl {
+public class Test3111 extends DocumentGeneratorServiceImpl {
 
-    private static final  String bizcode = "3171";
-    private static final  String bizcodeDesc = "获取自选栏目的分组标签";
+    private static final  String bizcode = "3111";
+    private static final  String bizcodeDesc = "持仓数据";
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
@@ -25,6 +21,7 @@ public class Test3171 extends DocumentGeneratorServiceImpl {
 
     public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
+        bodyJson.put("mctcustno", "1001883516");
         return bodyJson;
     }
 }

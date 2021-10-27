@@ -17,7 +17,10 @@
 /.pydevproject
 /%USERPROFILE%/
 /.pmd
-
+/checkstyle_zlfund_version1.0.xml
+/src/main/java/com/zlfund/openapi/test/*
 /.idea
-
-
+OpenAPI.iml
+/src/test/java/com/zlfund/openapi/test/*
+/src/main/java/com/zlfund/openapi/service/impl/cfca/test*
+/${project.build.directory}*

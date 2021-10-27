@@ -13,7 +13,7 @@ public class Test3185MigrateFundToCustOptionalGroup  extends DocumentGeneratorSe
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001881673";
+        String custNo =  "1001883516";
 
         // 需要数据交易密码的接口
         String tradeacco = "";
@@ -28,12 +28,12 @@ public class Test3185MigrateFundToCustOptionalGroup  extends DocumentGeneratorSe
         JSONObject bodyJson = new JSONObject();
 
 
-        bodyJson.put("removeFundIds", "XZGF00");
+        bodyJson.put("removeFundIds", "260108");
 
-        bodyJson.put("removeFundIds", "006444");
+        bodyJson.put("immigrateGroupIds", "857983,857949");
 
 
-        bodyJson.put("deleteGroupIds", "-1");
+//        bodyJson.put("deleteGroupIds", "-1");
 
         return bodyJson;
     }
