@@ -11,13 +11,13 @@ import java.nio.file.Paths;
 /**
  * @desc:
  * @author: admin
- * @since: 2021/10/27 11:24
+ * @since: 2021/10/28 13:14
  * @history:
  */
-public class Test3155创建本地签署3401  extends DocumentGeneratorServiceImpl {
+public class Test3151自定义pdf上传合同签署3203 extends DocumentGeneratorServiceImpl {
 
-    private static final  String bizcode = "3155";
-    private static final  String bizcodeDesc = "3155创建本地签署3401 ";
+    private static final  String bizcode = "3151";
+    private static final  String bizcodeDesc = "3151自定义pdf上传合同签署3203 ";
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
@@ -36,9 +36,11 @@ public class Test3155创建本地签署3401  extends DocumentGeneratorServiceImp
         bodyJson.put("userId", "C54519845C277CF1E05312016B0A937F");
         bodyJson.put("fundid", "SCW165");
         bodyJson.put("projectCode", "1212121111111");
-        bodyJson.put("contractTypeCode", "contract");
+        bodyJson.put("contractTypeCode", "riskbook");
         bodyJson.put("tradeacco", "1001883516");
         bodyJson.put("subamt","123456789.222");
+        bodyJson.put("contractName","SCW165 合同");
+
 
         try {
             bodyJson.put("imageData", Base64.toBase64String(Files.readAllBytes(Paths.get("C:\\Users\\Administrator\\Desktop\\签名.png"))));
@@ -47,4 +49,5 @@ public class Test3155创建本地签署3401  extends DocumentGeneratorServiceImp
         }
         return bodyJson;
     }
+
 }
