@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: ibm-security:ibmxmlcrypto:1.4.2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/ibm-security/ibmxmlcrypto/1.4.2/ibmxmlcrypto-1.4.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/ibm-security/ibmxmlcrypto/1.4.2/ibmxmlcrypto-1.4.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/ibm-security/ibmxmlcrypto/1.4.2/ibmxmlcrypto-1.4.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,10 @@
+
+]
+java:S1192("GDefine a constant instead of duplicating this literal "RET_1M" 5 times.(Â³”‹
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•µØ†
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(õÀâ¯øÿÿÿÿ
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(áÖó²ÿÿÿÿÿ
+<
+java:S1172"&Remove these unused method parameters.(éï
+Q	java:S125+"<This block of commented-out lines of code should be removed.(Ã±úì
+Q	java:S125d"<This block of commented-out lines of code should be removed.(’¤‘í

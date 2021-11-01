@@ -1,0 +1,9 @@
+
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ï«Ç€8Œ–şË/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ğ•Ùè
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Çšïúÿÿÿÿ8Ê°ŸşË/
+v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‡¢…‹8Ê°ŸşË/
+C
+java:S1172""&Remove these unused method parameters.(éï8Ñ°ŸşË/
+}
+java:S3252,"aUse static access with "cfca.sadk.org.bouncycastle.util.encoders.Base64Kit" for "toBase64String".(ç÷Ñ<8Ä©¤şË/

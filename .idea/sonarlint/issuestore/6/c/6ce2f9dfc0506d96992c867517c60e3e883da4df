@@ -1,0 +1,8 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•µØ†
+{
+java:S1488"`Immediately return this expression instead of assigning it to the temporary variable "bodyJson".(£¯Ÿ³ùÿÿÿÿ
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(²Í›Ÿúÿÿÿÿ
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ôõ­ÿÿÿÿÿ
+<
+java:S1172"&Remove these unused method parameters.(éï

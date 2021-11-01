@@ -1,0 +1,80 @@
+
+_
+java:S2095ã"HUse try-with-resources or close this "FileWriter" in a "finally" clause.(ÿª¼å
+d
+java:S2095ñ"HUse try-with-resources or close this "Connection" in a "finally" clause.(‹ÓäŒúÿÿÿÿ
+^
+java:S2095ó"GUse try-with-resources or close this "Statement" in a "finally" clause.(œïì”
+j
+java:S2095õ"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(îÂÆÓÿÿÿÿÿ
+E
+java:S3740d"/Provide the parametrized type for this generic.(™¢Ş€
+E
+java:S3740e"/Provide the parametrized type for this generic.(Ï„Ø¼
+b
+java:S1192I"GDefine a constant instead of duplicating this literal "fundid" 3 times.(õƒ°ùùÿÿÿÿ
+e
+java:S1192P"JDefine a constant instead of duplicating this literal "mctcustno" 6 times.(ˆ½ÅŞùÿÿÿÿ
+b
+java:S1192:"GDefine a constant instead of duplicating this literal "XZGF00" 3 times.(È†ï“ÿÿÿÿÿ
+]
+java:S11929"GDefine a constant instead of duplicating this literal "userId" 3 times.(ø±Ñû
+\
+java:S1192«"EDefine a constant instead of duplicating this literal "
+
+
+
+" 3 times.(¼®°¹
+Z
+java:S1192µ"DDefine a constant instead of duplicating this literal "
+
+
+" 6 times.(Ì±Æ!
+v
+java:S4144È"`Update this method so that its implementation is not identical to "setRequestValue" on line 263.(ì¢¡^
+v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(µÄÙ8•È¥Ì/
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ùĞšŸ
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÉÅıÙ
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(óĞŞãùÿÿÿÿ
+v
+java:S1149¦"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰
+{
+java:S1149‡"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(¼åœçşÿÿÿÿ
+v
+java:S1149¨"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(ÅÍ”
+u
+java:S1149È"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(ì¢¡^
+U
+java:S1118":Add a private constructor to hide the implicit public one.(‹àÓÂıÿÿÿÿ
+X	java:S125"<This block of commented-out lines of code should be removed.(ÏÛ™¶8İÏ¡ŠÌ/
+P	java:S125"<This block of commented-out lines of code should be removed.(èã†v
+Q	java:S125!"<This block of commented-out lines of code should be removed.(¼¼‘”
+_
+java:S4143:"DVerify this is the key that was intended; it was already set before.(È†ï“ÿÿÿÿÿ
+Z
+java:S4143h"DVerify this is the key that was intended; it was already set before.(Ÿïƒè
+_
+java:S4143i"DVerify this is the key that was intended; it was already set before.(µõ›øüÿÿÿÿ
+V	java:S125k"<This block of commented-out lines of code should be removed.(í¼ıÿÿÿÿ
+O
+java:S1854Ê"8Remove this useless assignment to local variable "msg1".(’úşğ
+O	java:S106"9Replace this use of System.out or System.err by a logger.(úŞçñ
+T	java:S106Æ"9Replace this use of System.out or System.err by a logger.(·Û¥·üÿÿÿÿ
+T	java:S106Î"9Replace this use of System.out or System.err by a logger.(åö¡½úÿÿÿÿ
+W	java:S125Ë"<This block of commented-out lines of code should be removed.(©‡ùÿÿÿÿ
+i	java:S100×"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓîËÍÿÿÿÿÿ
+]	java:S899Ş"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ
+]	java:S899ó"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ
+R	java:S125µ"<This block of commented-out lines of code should be removed.(³Ñ«ã
+D
+java:S1172š"-Remove this unused method parameter "passwd".(­Š¤
+R	java:S125£"<This block of commented-out lines of code should be removed.(¬äğ
+W	java:S125¥"<This block of commented-out lines of code should be removed.(€ïùÌÿÿÿÿÿ
+d
+java:S5361¶"HReplace this call to "replaceAll()" by a call to the "replace()" method.(Ê°ÔÛùÿÿÿÿ
+T
+java:S1854Ç"8Remove this useless assignment to local variable "last".(ûä‡•øÿÿÿÿ
+i
+java:S3776Â"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(¼Ş´…
+@
+java:S1481Ê")Remove this unused "msg1" local variable.(’úşğ
