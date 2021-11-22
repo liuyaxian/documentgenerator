@@ -29,7 +29,7 @@ public class Test3163上传合同与签署合同3201_3206  extends DocumentGener
         JSONObject bodyJson = new JSONObject();
         bodyJson.put("userId", "C54519845C277CF1E05312016B0A937F");
         bodyJson.put("projectCode", "1212121111111");
-        bodyJson.put("contractTypeCode", "visit");
+        bodyJson.put("contractTypeCode", "contract");
         bodyJson.put("fundid", "SCW165");
         bodyJson.put("tradeacco", "1001546061");
         try {

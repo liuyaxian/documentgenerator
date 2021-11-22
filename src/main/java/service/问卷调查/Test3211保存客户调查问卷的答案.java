@@ -16,7 +16,7 @@ public class Test3211保存客户调查问卷的答案 extends DocumentGenerator
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883516";
+        String custNo =  "1001883763";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111

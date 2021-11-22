@@ -1,19 +1,0 @@
-
-b
-java:S1192 "LDefine a constant instead of duplicating this literal "operatetype" 3 times.(¹¾Ê
-b
-java:S1192!"GDefine a constant instead of duplicating this literal "expand" 3 times.(ô”ãõûÿÿÿÿ
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•µØ†
-o	java:S115
-"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¨—Ñ
-o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(êáÁ–
-„
-java:S1130"nRemove the declaration of thrown exception 'java.io.IOException' which is a subclass of 'java.lang.Exception'.( ¿ñì
-<
-java:S1172"&Remove these unused method parameters.(éï
-_
-java:S4143&"DVerify this is the key that was intended; it was already set before.(ô”ãõûÿÿÿÿ
-Z
-java:S4143%"DVerify this is the key that was intended; it was already set before.(¹¾Ê
-_
-java:S4143("DVerify this is the key that was intended; it was already set before.(­âÚøÿÿÿÿ

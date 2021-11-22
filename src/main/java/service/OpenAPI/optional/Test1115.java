@@ -33,14 +33,14 @@ public class Test1115 extends DocumentGeneratorServiceImpl {
         bodyJson.put("expand","1");
 
 
-        bodyJson.put("mctcustno","1001881673");
+        bodyJson.put("mctcustno","1001883516");
         bodyJson.put("operatetype","0");
         bodyJson.put("expand","1");
-
-        bodyJson.put("mctcustno","1001883308");
-        bodyJson.put("operatetype","1");
-        bodyJson.put("expand","0");
-        bodyJson.put("fundid","XZG100");
+//
+//        bodyJson.put("mctcustno","1001883308");
+//        bodyJson.put("operatetype","1");
+//        bodyJson.put("expand","1");
+//        bodyJson.put("fundid","XZG100");
 
 
 
