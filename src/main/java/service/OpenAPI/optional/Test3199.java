@@ -24,7 +24,7 @@ public class Test3199    extends DocumentGeneratorServiceImpl {
 
     public static JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("groupId", 857940);
+        bodyJson.put("groupId", 5);
 
         //  万份收益 tenthou_unit_incm
         //     * 7日年化 year_yield_by7d
