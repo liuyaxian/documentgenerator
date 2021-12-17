@@ -1,13 +1,0 @@
-
-^
-java:S1192"HDefine a constant instead of duplicating this literal "groupId" 3 times.(Àé†¸
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•µØ†
-n	java:S115
-"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ê±—T
-t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(õÁ –þÿÿÿÿ
-„
-java:S1130"nRemove the declaration of thrown exception 'java.io.IOException' which is a subclass of 'java.lang.Exception'.( ¿ñì
-<
-java:S1172"&Remove these unused method parameters.(éï
-Z
-java:S4143 "DVerify this is the key that was intended; it was already set before.(Àé†¸

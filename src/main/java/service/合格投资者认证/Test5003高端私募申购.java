@@ -3,6 +3,10 @@ package service.合格投资者认证;
 import net.sf.json.JSONObject;
 import service.DocumentGeneratorServiceImpl;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * @desc:
  * @author: admin
@@ -18,9 +22,9 @@ public class Test5003高端私募申购 extends DocumentGeneratorServiceImpl {
         // 需要鉴权的接口 custNo 不为为空  15600084007  1001883406
         String custNo =  "1001883516";
         // 需要数据交易密码的接口
-        String tradeacco = "";
+        String tradeacco = "1001546209";
         // 交易密码 111111
-        String passwd = "111111";
+        String passwd = "ecc4ff67a0ef8282";
         JSONObject bodyJson =  setBody(bizcode, custNo);
         // 1001546198	1001883763
         requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson);
@@ -35,8 +39,11 @@ public class Test5003高端私募申购 extends DocumentGeneratorServiceImpl {
         bodyJson.put("paymenttp", "1");
         bodyJson.put("zltype", "CFPZG");
         bodyJson.put("agreecontract", "1");
-        bodyJson.put("serviceid", "D30034");
-
+        bodyJson.put("serviceid", "SEW390");
+        List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
+        List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
         return bodyJson;
     }
+
+
 }

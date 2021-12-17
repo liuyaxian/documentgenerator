@@ -15,8 +15,6 @@ Osrc/main/java/service/OpenAPI/optional/Test3175BatchUpdateCustOptionalFund.java
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 d
 4src/main/java/service/OpenAPI/optional/Test3173.java,a\5\a5eca154b8a8dfc80ccb57346901c9839406a358
-d
-4src/main/java/service/OpenAPI/optional/Test3191.java,c\6\c6c1592b0fba6da645e1d274183954449332280c
 p
 @src/main/java/service/OpenAPI/optional/certificate/Test2185.java,9\8\98d6487c575bdfd147f2812503f3f795396293ba
 p
@@ -72,17 +70,11 @@ Lsrc/main/java/service/OpenAPI/optional/Test3219单只自选产品置顶.java,9
 Qsrc/main/java/service/安心签/Test3163上传合同与签署合同3201_3206.java,5\3\538639eb4109109f396aa1566e306ba2f8b132df
 d
 4src/main/java/service/OpenAPI/optional/Test3201.java,8\5\854211acb5af4c83e9df616d02b94115804d3b8c
-d
-4src/main/java/service/OpenAPI/optional/Test1115.java,d\5\d575b93d0c8e1a75db14241d46a98f506fac4857
 �
 Qsrc/main/java/service/问卷调查/Test3211保存客户调查问卷的答案.java,c\5\c592e5254c56790e606c40dcd15dfcadab8a8596
 �
 asrc/main/java/service/OpenAPI/optional/Test3217查询自选产品是否在其他分组存在.java,a\c\ac7ad5bea6e2b1ed3e4c075eed91f3905ac43f01
-c
-3src/main/java/service/Test3125A股行情信息.java,a\f\af93e1fbcc5bbf2e3dfdd52eff2daea93fd28623
 S
 #src/main/java/service/Test3099.java,6\d\6db8998481f8e9620e8e8a7112fb7876d19f334a
 �
 Tsrc/main/java/service/合格投资者认证/Test5245是否属于合格投资者.java,0\5\0588e1b5ae6a50f68994e125fd745184b24265e1
-{
-Ksrc/main/java/service/合格投资者认证/Test5003高端私募申购.java,0\0\00b413da1d624de68b93d53f0784b9c61d0e5f8f

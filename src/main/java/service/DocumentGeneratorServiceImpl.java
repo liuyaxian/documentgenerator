@@ -400,6 +400,8 @@ public class DocumentGeneratorServiceImpl {
         // 签名
         reqJson.put("signtype", "m");
         //  ef2c0ef8385db0effdda73fad2cf32b0
+        // 167eef0c6c834b5b94322ecbf87ab108 1003
+        // ef2c0ef8385db0effdda73fad2cf32b0 1000
         reqJson.put("sign", DigestUtils.md5Hex((msgJson.toString() + "ef2c0ef8385db0effdda73fad2cf32b0")));
         return reqJson;
     }
