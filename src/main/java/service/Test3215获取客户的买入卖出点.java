@@ -28,8 +28,8 @@ public class Test3215获取客户的买入卖出点 extends DocumentGeneratorSer
     public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
         bodyJson.put("fundid", "000928");
-        bodyJson.put("startdate", "20100101");
-        bodyJson.put("enddate", "20211231");
+        bodyJson.put("startdate", "20180101");
+        bodyJson.put("enddate", "20181230");
 
         return bodyJson;
     }
