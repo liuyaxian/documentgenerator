@@ -21,10 +21,10 @@ public class DocumentGeneratorServiceImpl {
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
 
     // 测试环境
-    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
+//    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIBHJR/OpenAPI.do";
     // 开发环境
-//    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
+    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
 //
     // uat
 //    private static final  String url = "https://appapitest.zlfund.cn/OpenAPI.do";
