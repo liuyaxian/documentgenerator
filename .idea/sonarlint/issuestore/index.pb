@@ -21,8 +21,6 @@ p
 @src/main/java/service/OpenAPI/optional/certificate/Test2183.java,d\f\dfbc1b78f3c8aabbe3edec04186120add5a8d167
 �
 Vsrc/main/java/service/OpenAPI/optional/Test3195_importHistoryMyfundToOptionalFund.java,7\1\71ee1b76ac4949189005b2edd643fb16d57f1e11
-S
-#src/main/java/service/Test2153.java,a\6\a61d194ce159f13d2543b2fe8bd2dd36caac7e9b
 d
 4src/main/java/service/OpenAPI/optional/Test3193.java,c\a\ca8ec1bb13f658aadd07c441b3350db4dff056aa
 d
@@ -31,8 +29,6 @@ d
 4src/main/java/service/OpenAPI/optional/Test3181.java,8\4\84a733013b9b2c8d43b1a15d6262b008a6d532a0
 d
 4src/main/java/service/OpenAPI/optional/Test3171.java,6\c\6ce2f9dfc0506d96992c867517c60e3e883da4df
-`
-0src/main/java/service/首页推荐/Test3119.java,9\5\95748cba7018a966494dc31042321ac85197897d
 �
 Rsrc/main/java/service/OpenAPI/optional/Test3185MigrateFundToCustOptionalGroup.java,a\7\a7792af9a5adaa47beecc61602fda98240463981
 d
@@ -74,9 +70,27 @@ d
 Qsrc/main/java/service/问卷调查/Test3211保存客户调查问卷的答案.java,c\5\c592e5254c56790e606c40dcd15dfcadab8a8596
 �
 asrc/main/java/service/OpenAPI/optional/Test3217查询自选产品是否在其他分组存在.java,a\c\ac7ad5bea6e2b1ed3e4c075eed91f3905ac43f01
+d
+4src/main/java/service/OpenAPI/optional/Test3191.java,c\6\c6c1592b0fba6da645e1d274183954449332280c
+}
+Msrc/main/java/service/Test3221基金管理人管理规模和年化回报.java,9\7\97382c7159c2b98202cdbf86b1ed9a7c9c2690df
+d
+4src/main/java/service/OpenAPI/optional/Test1115.java,d\5\d575b93d0c8e1a75db14241d46a98f506fac4857
+k
+;src/main/java/service/Test5251私募产品相关协议.java,4\0\402cf5e543623ec7180e2f84d374e43b5b87e90e
+q
+Asrc/main/java/service/Test3215获取客户的买入卖出点.java,b\6\b6640acd4e2b80976203fb921d2517c1baa74491
+S
+#src/main/java/service/Test3099.java,6\d\6db8998481f8e9620e8e8a7112fb7876d19f334a
 �
 Tsrc/main/java/service/合格投资者认证/Test5245是否属于合格投资者.java,0\5\0588e1b5ae6a50f68994e125fd745184b24265e1
 �
 ]src/main/java/service/合格投资者认证/Test5249保存合格投资者认证的资料.java,a\0\a0adddfa81d5f3b840a71364475bc256d0e6af97
-d
-4src/main/java/service/OpenAPI/optional/Test3191.java,c\6\c6c1592b0fba6da645e1d274183954449332280c
+{
+Ksrc/main/java/service/合格投资者认证/Test5003高端私募申购.java,0\0\00b413da1d624de68b93d53f0784b9c61d0e5f8f
+Z
+*src/main/java/service/MavenLastUpdate.java,a\b\abd5ce2b598d164c5b465feda0856b7c1cde05fd
+�
+Wsrc/main/java/service/合格投资者认证/Test5247合格投资者验证列表页.java,b\4\b4f4ae715abaaee7e6eb4b5ee643de99cc31be84
+Y
+)src/main/java/service/Test2301登录.java,3\2\3213a9ff2267820cf7ec21d516fb41ec5aef95be

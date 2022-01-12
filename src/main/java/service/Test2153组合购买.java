@@ -7,7 +7,7 @@ import service.io.vo.FundInfo;
 /***
  * 2153 组合购买
  */
-public class Test2153  extends DocumentGeneratorServiceImpl {
+public class Test2153组合购买 extends DocumentGeneratorServiceImpl {
 
     private static final  String bizcode = "2153";
     private static final  String bizcodeDesc = "组合购买";

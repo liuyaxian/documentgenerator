@@ -22,7 +22,7 @@ public class Test3119 extends DocumentGeneratorServiceImpl {
 
     public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("code", "XFJJSY");
+        bodyJson.put("code", "XFJJ");
         return bodyJson;
     }
 }

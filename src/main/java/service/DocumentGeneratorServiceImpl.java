@@ -1,6 +1,7 @@
 package service;
 
 
+import service.util.DESEncHelper;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -21,10 +22,10 @@ public class DocumentGeneratorServiceImpl {
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
 
     // 测试环境
-//    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
+    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIBHJR/OpenAPI.do";
     // 开发环境
-    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
+//    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
 //
     // uat
 //    private static final  String url = "https://appapitest.zlfund.cn/OpenAPI.do";
@@ -423,17 +424,58 @@ public class DocumentGeneratorServiceImpl {
         authJson.put("mctcustno", custNo);
         authJson.put("sessionkey", getSessionkey(custNo));
         authJson.put("tradeacco", tradeacco);
-//        DESEncHelper des = DESEncHelper.getInstance();
+
+
+
+//        // 其余客户端均采用DES加密算法对密码进行加密
+//        service.util.DESEncHelper des = service.util.DESEncHelper.getInstance();
+//        try {
+//            System.out.println("encrypt: " + des.encrypt("aaa111"));
+//            System.out.println("decrypt: "+ des.decrypt("7f2e8cbdd934e553"));
+//
+//        } catch(Exception e) {
+//            e.printStackTrace();
+//        }
+
         try {
 //            authJson.put("passwd", des.encrypt(passwd));
             // ecc4ff67a0ef8282    111111
-            authJson.put("passwd", "ecc4ff67a0ef8282");
+            // 其余客户端均采用DES加密算法对密码进行加密
+            DESEncHelper des = DESEncHelper.getInstance();
+            try {
+                passwd = des.encrypt(passwd);
+            } catch(Exception e) {
+               e.printStackTrace();
+            }
+            authJson.put("passwd", passwd);
         }catch (Exception e){
             e.printStackTrace();
         }
         return authJson;
     }
 
+
+    public static String encryptPasswd(String passwd){
+//         其余客户端均采用DES加密算法对密码进行加密
+        service.util.DESEncHelper des = service.util.DESEncHelper.getInstance();
+        try {
+            return  des.encrypt(passwd);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+    public static String decryptPasswd(String passwd){
+//         其余客户端均采用DES加密算法对密码进行加密
+        service.util.DESEncHelper des = service.util.DESEncHelper.getInstance();
+        try {
+         return  des.decrypt("7f2e8cbdd934e553");
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return  "";
+    }
     // head 组装
     public static JSONObject setHeadJson(String  bizcode){
         JSONObject headJson = new JSONObject();

@@ -5,17 +5,17 @@ import net.sf.json.JSONObject;
 /**
  * @desc:
  * @author: admin
- * @since: 2021/12/28 18:24
+ * @since: 2022/1/12 13:51
  * @history:
  */
-public class Test2215五要素开户申请  extends DocumentGeneratorServiceImpl {
+public class Test2013静默登录  extends DocumentGeneratorServiceImpl {
 
-    private static final  String bizcode = "2215";
-    private static final  String bizcodeDesc = "五要素开户申请";
+    private static final  String bizcode = "2013";
+    private static final  String bizcodeDesc = "静默登录";
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883901";
+        String custNo =  "1001883551";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
@@ -28,16 +28,9 @@ public class Test2215五要素开户申请  extends DocumentGeneratorServiceImpl
     public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
 
-        bodyJson.put("custname", "李燕萍");
-        bodyJson.put("bankid", "BOCOM");
-        bodyJson.put("idtype", "0");
-        bodyJson.put("bankacco", "008888888888");
-        bodyJson.put("mobileno", "13068149322");
-        bodyJson.put("idno", "44142619951028092X");
-        bodyJson.put("mctcustno", "1001883901");
+        bodyJson.put("ciphertext","duYdCpHms5CMNobTkIveR3izHL0df0LILXqZJ/GWmWjrGwKFaWwFuT2jZPv1mwOXIgNjbM6IhIAiXaKIQWTAGn/rhxEsgZ8ltkD128a/F7Y93wB89n5HuwmGf8mrUA1u");
 
-//        String messsage  ="";
-//        JSONObject.fromObject(messsage);
+
 
         return bodyJson;
     }
