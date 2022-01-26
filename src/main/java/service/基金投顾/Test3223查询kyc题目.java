@@ -1,34 +1,36 @@
-package service;
+package service.基金投顾;
 
 import net.sf.json.JSONObject;
+import service.DocumentGeneratorServiceImpl;
 
 /**
  * @desc:
  * @author: admin
- * @since: 2021/12/21 15:43
+ * @since: 2022/1/20 14:01
  * @history:
  */
-public class Test3221基金管理人管理规模和年化回报 extends DocumentGeneratorServiceImpl {
+public class Test3223查询kyc题目 extends DocumentGeneratorServiceImpl {
 
-    private static final  String bizcode = "3221";
-    private static final  String bizcodeDesc = "基金管理人管理规模和年化回报";
+    private static final  String bizcode = "3223";
+    private static final  String bizcodeDesc = "查询kyc题目";
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883516";
+        String custNo =  "1001881673";
         // 需要数据交易密码的接口
-        String tradeacco = "";
+        String tradeacco = "1001544496";
         // 交易密码 111111
-        String passwd = "";
+        String passwd = "111111";
         JSONObject bodyJson =  setBody(bizcode, custNo);
         // 1001546198	1001883763
         requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson);
     }
 
-    public static  JSONObject setBody(String bizcode, String custNo){
-        JSONObject bodyJson = new JSONObject();
-        bodyJson.put("managerid", "302001675");
+    public static JSONObject setBody(String bizcode, String custNo){
 
+        JSONObject bodyJson = new JSONObject();
+
+        bodyJson.put("question_id", 39);
         return bodyJson;
     }
 }
