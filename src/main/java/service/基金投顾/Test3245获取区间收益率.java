@@ -29,7 +29,7 @@ public class Test3245获取区间收益率 extends DocumentGeneratorServiceImpl 
     public static JSONObject setBody(String bizcode, String custNo){
 
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("fundid", "XZGF00");
+        bodyJson.put("fundid", "C21001");
 
         return bodyJson;
     }

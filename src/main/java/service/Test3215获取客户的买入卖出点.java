@@ -29,7 +29,7 @@ public class Test3215获取客户的买入卖出点 extends DocumentGeneratorSer
         JSONObject bodyJson = new JSONObject();
         bodyJson.put("fundid", "000928");
         bodyJson.put("startdate", "20180101");
-        bodyJson.put("enddate", "20181230");
+        bodyJson.put("enddate", "20221230");
 
         return bodyJson;
     }

@@ -16,7 +16,7 @@ public class Test3227根据用户风险等级与KYC测评推荐基金  extends D
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883882";
+        String custNo =  "1001883308";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
@@ -29,7 +29,7 @@ public class Test3227根据用户风险等级与KYC测评推荐基金  extends D
     public static JSONObject setBody(String bizcode, String custNo){
 
         JSONObject bodyJson = new JSONObject();
-
+        bodyJson.put("page","tougu_list");
         return bodyJson;
     }
 

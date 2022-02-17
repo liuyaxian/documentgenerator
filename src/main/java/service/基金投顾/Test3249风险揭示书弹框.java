@@ -6,19 +6,19 @@ import service.DocumentGeneratorServiceImpl;
 /**
  * @desc:
  * @author: admin
- * @since: 2022/1/20 14:48
+ * @since: 2022/2/8 10:13
  * @history:
  */
-public class Test3233基金投顾列表  extends DocumentGeneratorServiceImpl {
+public class Test3249风险揭示书弹框   extends DocumentGeneratorServiceImpl {
 
-    private static final  String bizcode = "3233";
-    private static final  String bizcodeDesc = "基金投顾列表";
+    private static final  String bizcode = "3249";
+    private static final  String bizcodeDesc = "风险揭示书弹框";
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883882";
+        String custNo =  "1001883516";
         // 需要数据交易密码的接口
-        String tradeacco = "";
+        String tradeacco = "1001546209";
         // 交易密码 111111
         String passwd = "111111";
         JSONObject bodyJson =  setBody(bizcode, custNo);
@@ -29,7 +29,6 @@ public class Test3233基金投顾列表  extends DocumentGeneratorServiceImpl {
     public static JSONObject setBody(String bizcode, String custNo){
 
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("mctcustno","1001883882");
         return bodyJson;
     }
 }

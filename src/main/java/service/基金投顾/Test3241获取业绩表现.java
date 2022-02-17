@@ -29,7 +29,7 @@ public class Test3241获取业绩表现 extends DocumentGeneratorServiceImpl {
     public static JSONObject setBody(String bizcode, String custNo){
 
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("fundid", "XZGF00");
+        bodyJson.put("fundid", "C21001");
         bodyJson.put("period", "1W");
 
         return bodyJson;

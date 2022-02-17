@@ -34,7 +34,7 @@ public class DocumentGeneratorServiceImpl {
     //        private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
     private static final  String mctcode = "1000";
     private static final  String version = "4.0";
-    private static final  String appversion = "4.5.0";
+    private static final  String appversion = "4.5.1";
 
 //    public static void main(String[] args) throws IOException, Exception {
 //        // 需要鉴权的接口 custNo 不为为空

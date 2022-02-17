@@ -3,8 +3,6 @@ Y
 )src/main/java/service/io/vo/FundInfo.java,c\e\ce14c7ccf82d947d6bcda5eafc3e77f6dda1e74c
 [
 +src/main/java/test/CustFundBalanceInfo.java,1\8\18d8d1d0afe9d81d7a4dc3921fd1e9eaeb9a32c9
-O
-src/main/java/test/htmlstr.java,1\9\199d77a0a1b1e83081486018f53549c9f0058e31
 T
 $src/main/java/service/io/io笔记.md,e\c\ec0074688c0210a009b2ad6557e011afe4d81a3e
 l
@@ -92,3 +90,21 @@ l
 0src/main/java/service/首页推荐/Test3119.java,9\5\95748cba7018a966494dc31042321ac85197897d
 e
 5src/main/java/service/Test2347修改客户信息.java,c\5\c5e9c1bdf62fb103ac97e8dec0cb48b20184f500
+O
+src/main/java/test/htmlstr.java,1\9\199d77a0a1b1e83081486018f53549c9f0058e31
+S
+#src/main/java/test/TestRuntime.java,a\4\a40300f3e4d59cbc96643724643c458c436862a8
+_
+/src/main/java/service/Test2153组合购买.java,1\1\1172ae1e088e84c4e4fae80c8243ed64c6f9daf2
+x
+Hsrc/main/java/service/基金投顾/Test3229获取客户测评结果.java,b\5\b57d94680a91ad3a956c624c5e380845bc18b195
+u
+Esrc/main/java/service/基金投顾/Test3249风险揭示书弹框.java,3\3\33536ca78d12e5a71276acb8a8a38f5e227a2fa0
+u
+Esrc/main/java/service/基金投顾/Test3225保存用户kyc结果.java,8\5\85baaeaf7dc66804de1971c355c4300e84379671
+o
+?src/main/java/service/基金投顾/Test3223查询kyc题目.java,8\c\8cb95529e79b1d1536d9bc6d96524d983afd5470
+�
+`src/main/java/service/基金投顾/Test3227根据用户风险等级与KYC测评推荐基金.java,2\d\2d4671ce8845ce78a0df610e3b7985c1c85e9a4e
+r
+Bsrc/main/java/service/基金投顾/Test3251转出区间限值.java,9\e\9ee6dd967858f427104a85aa9ac18c067e3985bb
