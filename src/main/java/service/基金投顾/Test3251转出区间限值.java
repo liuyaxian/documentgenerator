@@ -16,7 +16,7 @@ public class Test3251转出区间限值  extends DocumentGeneratorServiceImpl {
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883911";
+        String custNo =  "1001883516";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
@@ -30,7 +30,7 @@ public class Test3251转出区间限值  extends DocumentGeneratorServiceImpl {
 
         JSONObject bodyJson = new JSONObject();
         bodyJson.put("fundid", "C21001");
-        bodyJson.put("tradeacco", "1001546367");
+        bodyJson.put("tradeacco", "1001546379");
         return bodyJson;
     }
 }

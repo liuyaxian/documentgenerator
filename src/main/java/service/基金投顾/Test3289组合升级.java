@@ -6,17 +6,17 @@ import service.DocumentGeneratorServiceImpl;
 /**
  * @desc:
  * @author: admin
- * @since: 2022/1/20 14:46
+ * @since: 2022/2/22 17:58
  * @history:
  */
-public class Test3231持仓风险匹配情况  extends DocumentGeneratorServiceImpl {
+public class Test3289组合升级  extends DocumentGeneratorServiceImpl {
 
-    private static final  String bizcode = "3231";
-    private static final  String bizcodeDesc = "持仓风险匹配情况";
+    private static final  String bizcode = "3289";
+    private static final  String bizcodeDesc = "3289组合升级";
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883516";
+        String custNo =  "1001883911";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
@@ -29,7 +29,8 @@ public class Test3231持仓风险匹配情况  extends DocumentGeneratorServiceI
     public static JSONObject setBody(String bizcode, String custNo){
 
         JSONObject bodyJson = new JSONObject();
-
+        bodyJson.put("datalist", "");
         return bodyJson;
     }
 }
+

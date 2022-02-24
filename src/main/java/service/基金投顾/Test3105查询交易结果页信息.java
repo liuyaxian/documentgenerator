@@ -16,9 +16,9 @@ public class Test3105查询交易结果页信息  extends DocumentGeneratorServi
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883516";
+        String custNo =  "1001881526";
         // 需要数据交易密码的接口
-        String tradeacco = "1001546209";
+        String tradeacco = "1001544763";
         // 交易密码 111111
         String passwd = "111111";
         JSONObject bodyJson =  setBody(bizcode, custNo);
@@ -29,10 +29,10 @@ public class Test3105查询交易结果页信息  extends DocumentGeneratorServi
     public static JSONObject setBody(String bizcode, String custNo){
 
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("mctcustno", "1001883516");
+        bodyJson.put("mctcustno", "1001881526");
         bodyJson.put("mainflag", "1");
-        bodyJson.put("serialno", "202202141812531343100007");
-        bodyJson.put("bizcode", "3255");
+        bodyJson.put("serialno", "202202211613021376100007");
+        bodyJson.put("bizcode", "3289");
         return bodyJson;
     }
 }

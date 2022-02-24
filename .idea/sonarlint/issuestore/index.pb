@@ -99,12 +99,34 @@ _
 x
 Hsrc/main/java/service/基金投顾/Test3229获取客户测评结果.java,b\5\b57d94680a91ad3a956c624c5e380845bc18b195
 u
-Esrc/main/java/service/基金投顾/Test3249风险揭示书弹框.java,3\3\33536ca78d12e5a71276acb8a8a38f5e227a2fa0
-u
 Esrc/main/java/service/基金投顾/Test3225保存用户kyc结果.java,8\5\85baaeaf7dc66804de1971c355c4300e84379671
 o
 ?src/main/java/service/基金投顾/Test3223查询kyc题目.java,8\c\8cb95529e79b1d1536d9bc6d96524d983afd5470
+{
+Ksrc/main/java/service/基金投顾/Test3267投顾组合相关的状态.java,0\d\0dfec8386cc31fc916e134df2fce944922d17e1e
 �
 `src/main/java/service/基金投顾/Test3227根据用户风险等级与KYC测评推荐基金.java,2\d\2d4671ce8845ce78a0df610e3b7985c1c85e9a4e
 r
-Bsrc/main/java/service/基金投顾/Test3251转出区间限值.java,9\e\9ee6dd967858f427104a85aa9ac18c067e3985bb
+Bsrc/main/java/service/基金投顾/Test3243投顾策略详情.java,b\3\b3e05447892ce0a2942620a8175f68ea6973d775
+�
+asrc/main/java/service/基金投顾/Test3259投顾组合转出未满7天惩罚性赎回提示.java,7\4\748f3715d187785edb078e7772bbbed9e23ff1f7
+~
+Nsrc/main/java/service/基金投顾/Test2349设置客户风险承受等级.java,7\4\741795a5e7d3b95ebf24f8adf43bcebfbbcdc98b
+u
+Esrc/main/java/service/基金投顾/Test3245获取区间收益率.java,7\3\73faf908fe0e7be41483f739b83f706873d91289
+r
+Bsrc/main/java/service/基金投顾/Test3247投顾组合转入.java,8\a\8a63edaeb8e3cf06b19d65eb629a4b46bcca025c
+~
+Nsrc/main/java/service/基金投顾/Test3095获取商户客户历史交易.java,f\8\f85338d424f5d863535aecc900e42d5879d776da
+{
+Ksrc/main/java/service/基金投顾/Test3265投顾组合持仓银行卡.java,4\5\45a64183649cf8033f67a64d8f761c8ab654c58e
+u
+Esrc/main/java/service/基金投顾/Test1169查询薛掌柜持仓.java,b\9\b920591c7625013e01074d9e64ce19ce346ec869
+r
+Bsrc/main/java/service/基金投顾/Test3241获取业绩表现.java,6\9\69061575e6e28ccfdbf1c646d3cf7c023bbd48b5
+l
+<src/main/java/service/基金投顾/Test3273持仓占比.java,4\9\4954ee62961068a1e9bf8f666ca20187cd5a841b
+~
+Nsrc/main/java/service/基金投顾/Test3269投顾组合单支产品收益.java,c\a\ca6edddc8cc26516f1a909416e1eb0c5207a1bc0
+u
+Esrc/main/java/service/基金投顾/Test3249风险揭示书弹框.java,3\3\33536ca78d12e5a71276acb8a8a38f5e227a2fa0
