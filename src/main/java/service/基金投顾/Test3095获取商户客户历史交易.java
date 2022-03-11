@@ -30,6 +30,9 @@ public class Test3095获取商户客户历史交易  extends DocumentGeneratorSe
 
         JSONObject bodyJson = new JSONObject();
         bodyJson.put("mctcustno", "1001883516");
+        bodyJson.put("mainflag", "1");
+        bodyJson.put("tradetype", "tg");
+
         return bodyJson;
     }
 }

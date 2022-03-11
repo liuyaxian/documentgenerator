@@ -15,8 +15,8 @@ public class Test3269投顾组合单支产品收益  extends DocumentGeneratorSe
     private static final  String bizcodeDesc = "3269投顾组合单支产品收益";
 
     public static void main(String[] args) throws Exception {
-        // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883911";
+        // 需要鉴权的接口 custNo 不为为空 1001883516
+        String custNo =  "1001883516";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
@@ -29,7 +29,8 @@ public class Test3269投顾组合单支产品收益  extends DocumentGeneratorSe
     public static JSONObject setBody(String bizcode, String custNo){
 
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("tradeacco", "1001546367");
+        // 1001546379
+        bodyJson.put("tradeacco", "1001546379");
         bodyJson.put("fundid", "C21001");
 
         return bodyJson;

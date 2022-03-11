@@ -32,7 +32,9 @@ public class Test3255投顾组合转出  extends DocumentGeneratorServiceImpl {
         bodyJson.put("fundid", "C21001");
         bodyJson.put("tradeacco", "1001546367");
         bodyJson.put("allredflag", "0");
-        bodyJson.put("subratio", 0.2);
+        bodyJson.put("subratio", 0.4);
+        bodyJson.put("subamt", 456);
+
         return bodyJson;
     }
 }

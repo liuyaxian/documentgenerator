@@ -30,7 +30,7 @@ public class Test3241获取业绩表现 extends DocumentGeneratorServiceImpl {
 
         JSONObject bodyJson = new JSONObject();
         bodyJson.put("fundid", "C21001");
-        bodyJson.put("period", "1W");
+        bodyJson.put("period", "1Y");
 
         return bodyJson;
     }

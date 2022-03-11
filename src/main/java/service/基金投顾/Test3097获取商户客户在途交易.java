@@ -18,7 +18,7 @@ public class Test3097获取商户客户在途交易   extends DocumentGeneratorS
         // 需要鉴权的接口 custNo 不为为空
         String custNo =  "1001883516";
         // 需要数据交易密码的接口
-        String tradeacco = "1001546209";
+        String tradeacco = "1001546014";
         // 交易密码 111111
         String passwd = "111111";
         JSONObject bodyJson =  setBody(bizcode, custNo);

@@ -16,9 +16,9 @@ public class Test3247投顾组合转入  extends DocumentGeneratorServiceImpl {
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883516";
+        String custNo =  "1001883911";
         // 需要数据交易密码的接口
-        String tradeacco = "1001546209";
+        String tradeacco = "1001546330";
         // 交易密码 111111
         String passwd = "111111";
         JSONObject bodyJson =  setBody(bizcode, custNo);
@@ -30,7 +30,7 @@ public class Test3247投顾组合转入  extends DocumentGeneratorServiceImpl {
 
         JSONObject bodyJson = new JSONObject();
         bodyJson.put("serviceid", "C21001");
-        bodyJson.put("subamt", 5000);
+        bodyJson.put("subamt", 1000);
         bodyJson.put("paymenttp", "0");
         bodyJson.put("bankcmd", "1");
         bodyJson.put("postponeflag", "1");

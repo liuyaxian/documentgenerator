@@ -62,8 +62,6 @@ Esrc/main/java/service/安心签/Test3157查询合同模板信息.java,a\0\a0c1
 Lsrc/main/java/service/OpenAPI/optional/Test3219单只自选产品置顶.java,9\1\9130b7b0d5b5e0fbad4947753bb2d54ec06b3ec0
 �
 Qsrc/main/java/service/安心签/Test3163上传合同与签署合同3201_3206.java,5\3\538639eb4109109f396aa1566e306ba2f8b132df
-d
-4src/main/java/service/OpenAPI/optional/Test3201.java,8\5\854211acb5af4c83e9df616d02b94115804d3b8c
 �
 Qsrc/main/java/service/问卷调查/Test3211保存客户调查问卷的答案.java,c\5\c592e5254c56790e606c40dcd15dfcadab8a8596
 �
@@ -88,8 +86,6 @@ l
 <src/main/java/service/首页推荐/Test3177新发基金.java,f\d\fdf88adfe93691e54a4e39804de6580799bc31d5
 `
 0src/main/java/service/首页推荐/Test3119.java,9\5\95748cba7018a966494dc31042321ac85197897d
-e
-5src/main/java/service/Test2347修改客户信息.java,c\5\c5e9c1bdf62fb103ac97e8dec0cb48b20184f500
 O
 src/main/java/test/htmlstr.java,1\9\199d77a0a1b1e83081486018f53549c9f0058e31
 S
@@ -102,31 +98,29 @@ u
 Esrc/main/java/service/基金投顾/Test3225保存用户kyc结果.java,8\5\85baaeaf7dc66804de1971c355c4300e84379671
 o
 ?src/main/java/service/基金投顾/Test3223查询kyc题目.java,8\c\8cb95529e79b1d1536d9bc6d96524d983afd5470
-{
-Ksrc/main/java/service/基金投顾/Test3267投顾组合相关的状态.java,0\d\0dfec8386cc31fc916e134df2fce944922d17e1e
-�
-`src/main/java/service/基金投顾/Test3227根据用户风险等级与KYC测评推荐基金.java,2\d\2d4671ce8845ce78a0df610e3b7985c1c85e9a4e
-r
-Bsrc/main/java/service/基金投顾/Test3243投顾策略详情.java,b\3\b3e05447892ce0a2942620a8175f68ea6973d775
 �
 asrc/main/java/service/基金投顾/Test3259投顾组合转出未满7天惩罚性赎回提示.java,7\4\748f3715d187785edb078e7772bbbed9e23ff1f7
 ~
 Nsrc/main/java/service/基金投顾/Test2349设置客户风险承受等级.java,7\4\741795a5e7d3b95ebf24f8adf43bcebfbbcdc98b
 u
 Esrc/main/java/service/基金投顾/Test3245获取区间收益率.java,7\3\73faf908fe0e7be41483f739b83f706873d91289
-r
-Bsrc/main/java/service/基金投顾/Test3247投顾组合转入.java,8\a\8a63edaeb8e3cf06b19d65eb629a4b46bcca025c
-~
-Nsrc/main/java/service/基金投顾/Test3095获取商户客户历史交易.java,f\8\f85338d424f5d863535aecc900e42d5879d776da
-{
-Ksrc/main/java/service/基金投顾/Test3265投顾组合持仓银行卡.java,4\5\45a64183649cf8033f67a64d8f761c8ab654c58e
 u
 Esrc/main/java/service/基金投顾/Test1169查询薛掌柜持仓.java,b\9\b920591c7625013e01074d9e64ce19ce346ec869
-r
-Bsrc/main/java/service/基金投顾/Test3241获取业绩表现.java,6\9\69061575e6e28ccfdbf1c646d3cf7c023bbd48b5
 l
-<src/main/java/service/基金投顾/Test3273持仓占比.java,4\9\4954ee62961068a1e9bf8f666ca20187cd5a841b
-~
-Nsrc/main/java/service/基金投顾/Test3269投顾组合单支产品收益.java,c\a\ca6edddc8cc26516f1a909416e1eb0c5207a1bc0
+<src/main/java/service/基金投顾/Test3275资产配置.java,a\b\abd5348c68b71afcd4a5f23a073fac6dc46e5764
+n
+>src/main/java/service/Test2307获取用户银行卡信息.java,d\8\d8ffd5994b4e0ddcb05b0fda57b3076fb723b71f
+e
+5src/main/java/service/Test2347修改客户信息.java,c\5\c5e9c1bdf62fb103ac97e8dec0cb48b20184f500
+l
+<src/main/java/service/基金投顾/Test3289组合升级.java,d\f\dfa9d6271b0b403a2946fe5120163d90f0a00607
 u
-Esrc/main/java/service/基金投顾/Test3249风险揭示书弹框.java,3\3\33536ca78d12e5a71276acb8a8a38f5e227a2fa0
+Esrc/main/java/service/基金投顾/Test3285客户待升级组合.java,3\a\3ab3b600176461cdbe3042dd2b612f8a5d5f0704
+d
+4src/main/java/service/OpenAPI/optional/Test3201.java,8\5\854211acb5af4c83e9df616d02b94115804d3b8c
+x
+Hsrc/main/java/service/基金投顾/Test3277投顾组合交易记录.java,6\3\63903f8150c8957ae1ec4407118319d503c176f5
+u
+Esrc/main/java/service/基金投顾/Test3279投顾服务费明细.java,b\7\b770a7319ebde4d6da3faffa4b8e10041c988a24
+x
+Hsrc/main/java/service/基金投顾/Test3261投顾组合年度涨幅.java,d\7\d74323314a0c6ad3fef52c8c7bcb788ced770f48

@@ -29,6 +29,10 @@ public class Test3249风险揭示书弹框   extends DocumentGeneratorServiceImp
     public static JSONObject setBody(String bizcode, String custNo){
 
         JSONObject bodyJson = new JSONObject();
+        bodyJson.put("fundid", "C21001");
+
+        bodyJson.put("tradeacco", "1001546209");
+
         return bodyJson;
     }
 }

@@ -16,7 +16,7 @@ public class Test3265投顾组合持仓银行卡 extends DocumentGeneratorServic
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883911";
+        String custNo =  "1001883516";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
