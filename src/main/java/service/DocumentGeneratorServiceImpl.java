@@ -22,10 +22,10 @@ public class DocumentGeneratorServiceImpl {
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
 
     // 测试环境
-//    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
+    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIBHJR/OpenAPI.do";
     // 开发环境
-    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
+//    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
 //
     // uat
 //    private static final  String url = "https://appapitest.zlfund.cn/OpenAPI.do";
@@ -33,8 +33,14 @@ public class DocumentGeneratorServiceImpl {
 
     //        private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
     private static final  String mctcode = "1000";
+    // ef2c0ef8385db0effdda73fad2cf32b0   1000
+    // 167eef0c6c834b5b94322ecbf87ab108 1003
+    // c46b9b4dabae425a9daabbe16c8994df  00
+    // 3c05f9e358214fc78cb8a1a0020540f6  0040
+    private static final  String sign = "ef2c0ef8385db0effdda73fad2cf32b0";
     private static final  String version = "4.0";
-    private static final  String appversion = "4.5.1";
+    private static final  String appversion = "2.2.2";
+    private static final  String appversionCode = "";
 
 //    public static void main(String[] args) throws IOException, Exception {
 //        // 需要鉴权的接口 custNo 不为为空
@@ -58,110 +64,27 @@ public class DocumentGeneratorServiceImpl {
             bodyJson.put("mobilePhone", "17666100076");
             bodyJson.put("authenticationMode", "公安部");
         }
-        // 发送验证码3101
-        if ("3141".equals(bizcode)){
-            bodyJson.put("userId", "C31FD569690C4718E05311016B0AF1FB");
-            bodyJson.put("userId", "XZGF00");
-            bodyJson.put("projectCode", "10000001");
-        }
-        // 确认验证码3102
-        if ("3143".equals(bizcode)){
-            bodyJson.put("userId", "C31FD569690C4718E05311016B0AF1FB");
-            bodyJson.put("projectCode", "10000001");
-            bodyJson.put("checkCode", "411026");
-        }
-
-        if ("3135".equals(bizcode)){
-            bodyJson.put("fundids", "XZGF00");
-        }
-        if ("5235".equals(bizcode)){
-            bodyJson.put("sortfield", "period");
-            bodyJson.put("fundid", "");
-            bodyJson.put("sortmode", "DESC");
-        }
-        if ("2307".equals(bizcode)){
-//            "mctcustno": "1001883548",
-//                    "orderbyfield": "perlimitamt",
-//                    "tradeType": "ZL"
-            bodyJson.put("mctcustno", "1001883548");
-            bodyJson.put("orderbyfield", "perlimitamt");
-            bodyJson.put("tradeType", "ZL");
-        }
-        if ("2401".equals(bizcode)){
-            bodyJson.put("inner_code", 1000009983);
-            bodyJson.put("fundid", "003009");
-            bodyJson.put("balancedetailtype", "INC");
-            bodyJson.put("fundtype", "0");
-            bodyJson.put("period", "1M");
-            bodyJson.put("mctcustno", "1001881549");
-            bodyJson.put("tradeacco", "1001544877");
-        }
-
-
-
-        if ("3123".equals(bizcode)){
-            bodyJson.put("code", "CLXJ_JNJ");
-        }
-        if ("3133".equals(bizcode)){
-            List<Map> mapList = new ArrayList<>();
-            Map map = new HashMap<>();
-            map.put("fundId","161725");
-            map.put("yieldPeriod","RET_1Y");
-            map.put("fundId","XZGF00");
-            map.put("yieldPeriod","RET_1M");
-            mapList.add(map);
-//            Map map2 = new HashMap<>();
-//            map2.put("fundId","002143");
-//            map2.put("yieldPeriod","RET_5Y");
-//            mapList.add(map2);
-//            Map map3 = new HashMap<>();
-//            map3.put("fundId","XZGF00");
-//            map3.put("yieldPeriod","RET_5Y");
-//            mapList.add(map3);
-//
-//            Map map4 = new HashMap<>();
-//            map4.put("fundId","SCW165");
-//            map4.put("yieldPeriod","RET_5Y");
-//            mapList.add(map4);
-
-            bodyJson.put("fundarr", mapList);
-        }
-        if ("2309".equals(bizcode)){
-            bodyJson.put("mctcustno", custNo);
-        }
-        //  3131 众禄严选
-        if ("3131".equals(bizcode)){
-            bodyJson.put("mctcustno", custNo);
-        }
-        // 2103认申购接口
-        if ("2103".equals(bizcode)){
-            bodyJson.put("mctcustno", custNo);
-            bodyJson.put("fundid", "000217");
-            bodyJson.put("subamt", 1235);
-            bodyJson.put("bankcmd", "1");
-            bodyJson.put("capbal", "1");
-            bodyJson.put("postponeflag", "1");
-            bodyJson.put("forcedeal", "1");
-            bodyJson.put("agreement", "风险揭示,电子签名协议");
-            bodyJson.put("serialnoex", "");
-            bodyJson.put("agreerisk", "1");
-            bodyJson.put("paymentmethod", "B");
-            bodyJson.put("opertime", "20210301084435");
-        }
-        if ("3117".equals(bizcode)){
-            // XFJJ XFJJ_SY
-            bodyJson.put("code", "XFJJSY");
-        }
         return bodyJson;
     }
 
 
 
-    public static void requestUrl(String custno, String tradeacco, String passwd, String bizcode, String bizcodeDesc,JSONObject requestBodyJson) throws IOException {
+    public static String requestUrl(String custno, String tradeacco, String passwd, String bizcode, String bizcodeDesc,JSONObject requestBodyJson) throws IOException {
         JSONObject reqJson = createReqJson(bizcode, custno, tradeacco, passwd, requestBodyJson);
 
         System.out.println("请求json:" + reqJson.toString());
-        NameValuePair[] param = { new NameValuePair("data", reqJson.toString()) };
+        NameValuePair[] param = {new NameValuePair("data", reqJson.toString())};
+        if ("3291".equals(bizcode)){
+            // 解密字符串
+            DESEncHelper des = DESEncHelper.getInstance();
+            try {
+                String domain =  des.encrypt(reqJson.toString());
+                param = new NameValuePair[]{new NameValuePair("domain", domain.toString())};
+            } catch(Exception e) {
+
+            }
+        }
+
         PostMethod method = new PostMethod(url);
         method.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
         method.setRequestBody(param);
@@ -181,9 +104,10 @@ public class DocumentGeneratorServiceImpl {
         sb.append("接口参数" + "\n\n");
         sb.append("**请求参数**" + "\n\n");
         sb.append("bizcode:"+ bizcode + "\n\n");
-        sb.append("```JSON"+ "\n\n");
-        sb.append("请求json:"+ "\n\n");
-        sb.append(formatJson(reqJson.toString()) + "\n");
+        sb.append("请求报文："+ "\n\n");
+        sb.append("```json"+ "\n\n");
+        String reqJsonStr = formatJson(reqJson.toString());
+        sb.append(reqJsonStr + "\n");
         sb.append("```" + "\n\n\n");
         sb.append("| **字段名称** | **Json path**   | **格式** | **必填** | **备注**   |" + "\n");
         sb.append("| ------------ | --------------- | -------- | -------- | ---------- | " + "\n");
@@ -193,8 +117,8 @@ public class DocumentGeneratorServiceImpl {
         sb.append("\n\n\n"+"**响应参数**" + "\n\n\n");
         int code = Integer.parseInt(bizcode) + 1;
         sb.append("bizcode:" +  code + "\n\n\n");
-        sb.append("```JSON" + "\n\n");
-        sb.append("响应Json:" + "\n");
+        sb.append("响应报文："+ "\n\n");
+        sb.append("```json" + "\n\n");
         sb.append(formatJson(method.getResponseBodyAsString())+ "\n\n\n");
         sb.append("```" + "\n\n\n");
         sb.append("| **字段名称**   | **Json path** | **格式** | **必填** | **备注**  |" + "\n");
@@ -202,7 +126,7 @@ public class DocumentGeneratorServiceImpl {
         String responseStr = method.getResponseBodyAsString();
         if (StringUtils.isBlank(responseStr)){
             System.out.println("为空！");
-            return ;
+            return "" ;
         }
         JSONObject jsonObj = JSONObject.fromObject(responseStr);
         JSONObject msg1 = (JSONObject) jsonObj.get("msg");
@@ -210,6 +134,7 @@ public class DocumentGeneratorServiceImpl {
 //        setResponsValue(bodyJson1, sb);
 //        FileWriter(sb.toString(),bizcode , bizcodeDesc);
         System.out.println(sb.toString());
+        return reqJsonStr;
     }
 
 
@@ -406,7 +331,7 @@ public class DocumentGeneratorServiceImpl {
         // ef2c0ef8385db0effdda73fad2cf32b0 1000
         // c46b9b4dabae425a9daabbe16c8994df  00
         // ef2c0ef8385db0effdda73fad2cf32b0   1000
-        reqJson.put("sign", DigestUtils.md5Hex((msgJson.toString() + "ef2c0ef8385db0effdda73fad2cf32b0")));
+        reqJson.put("sign", DigestUtils.md5Hex((msgJson.toString() + sign)));
         return reqJson;
     }
 
@@ -483,6 +408,7 @@ public class DocumentGeneratorServiceImpl {
         JSONObject headJson = new JSONObject();
         headJson.put("version", version);
         headJson.put("appversion", appversion);
+        headJson.put("appversionCode", appversionCode);
         headJson.put("bizcode", bizcode);
         headJson.put("senddate", formatDate(new Date(), "yyyyMMdd"));
         headJson.put("sendtime", formatDate(new Date(), "HHmmss"));

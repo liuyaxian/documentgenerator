@@ -3,16 +3,10 @@ package service.基金投顾;
 import net.sf.json.JSONObject;
 import service.DocumentGeneratorServiceImpl;
 
-/**
- * @desc:
- * @author: admin
- * @since: 2022/2/21 15:54
- * @history:
- */
-public class Test1169查询薛掌柜持仓 extends DocumentGeneratorServiceImpl {
+public class Test6003客户所有持仓 extends DocumentGeneratorServiceImpl {
 
-    private static final  String bizcode = "1169";
-    private static final  String bizcodeDesc = "1169查询薛掌柜持仓";
+    private static final  String bizcode = "6003";
+    private static final  String bizcodeDesc = "客户所有持仓";
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空

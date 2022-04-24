@@ -29,8 +29,19 @@ public class Test3289组合升级  extends DocumentGeneratorServiceImpl {
     public static JSONObject setBody(String bizcode, String custNo){
 
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("datalist", "");
+
+        String body = " [{'custno':'1001883548','tradeacco':'1001546170','productid':'XZGF0T','targetserviceid':'C21003',\n" +
+                "                    'serialno':'202204251658212470100507'},{'custno':'1001883548','tradeacco':'1001546165',\n" +
+                "                    'productid':'XZGF0T','targetserviceid':'C21003','serialno':'202204251658212471100507'},\n" +
+                "            {'custno':'1001883548','tradeacco':'1001546164','productid':'XZGF0S','targetserviceid':\n" +
+                "                'C21003','serialno':'202204251658212472100507'}],\n" +
+                "            'agreement':'华宝薛掌柜新中产进取型组合策略说明书,基金投资顾问服务协议,基金投顾服务风险揭示书','sourceip':'172.18.50.113',\n" +
+                "                    'user':{'custno':'1001883548','tradeacco':'','bankacco':'','bankno':'','risklevel':'5','xzgrisklevel':'5',\n" +
+                "                    'mobileno':'17603035566'}}";
+        JSONObject.fromObject(body);
+        bodyJson.put("datalist",  JSONObject.fromObject(body));
         return bodyJson;
     }
+
 }
 

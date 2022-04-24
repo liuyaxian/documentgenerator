@@ -3,19 +3,13 @@ package service.基金投顾;
 import net.sf.json.JSONObject;
 import service.DocumentGeneratorServiceImpl;
 
-/**
- * @desc:
- * @author: admin
- * @since: 2022/2/21 15:54
- * @history:
- */
-public class Test1169查询薛掌柜持仓 extends DocumentGeneratorServiceImpl {
+public class Test2339用户支付方式  extends DocumentGeneratorServiceImpl {
 
-    private static final  String bizcode = "1169";
-    private static final  String bizcodeDesc = "1169查询薛掌柜持仓";
+    private static final  String bizcode = "2339";
+    private static final  String bizcodeDesc = "2339用户支付方式";
 
     public static void main(String[] args) throws Exception {
-        // 需要鉴权的接口 custNo 不为为空
+        // 需要鉴权的接口 custNo 不为为
         String custNo =  "1001883516";
         // 需要数据交易密码的接口
         String tradeacco = "";
@@ -30,6 +24,9 @@ public class Test1169查询薛掌柜持仓 extends DocumentGeneratorServiceImpl 
 
         JSONObject bodyJson = new JSONObject();
         bodyJson.put("mctcustno", "1001883516");
+
+        bodyJson.put("fundid", "000771");
+
         return bodyJson;
     }
 }

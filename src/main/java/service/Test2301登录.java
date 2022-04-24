@@ -23,10 +23,10 @@ public class Test2301登录  extends DocumentGeneratorServiceImpl {
         String passwd = "aaa111";
         JSONObject bodyJson =  setBody(bizcode, custNo, passwd);
         // 1001546198	1001883763
-//        requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson);
+        requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson);
 
 
-        System.out.println(urlHttpReplaceHttps("http://pdf.dfcfw.com/pdf/H6_PNG30074106_1.png"));
+//        System.out.println(urlHttpReplaceHttps("http://pdf.dfcfw.com/pdf/H6_PNG30074106_1.png"));
 
 
     }
