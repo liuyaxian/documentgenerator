@@ -34,7 +34,7 @@ public class Test3291获取指定域名下的证书文件  extends DocumentGener
     public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
 //        bodyJson.put("domain", "fcef2a94a8f9d1175641b5f9dc0a2874e7933ad99549385d");
-        bodyJson.put("domain", "officeapi.zlfund.cn");
+        bodyJson.put("domain", "https://cloud.tencent.com/");
 
         return bodyJson;
     }
