@@ -22,10 +22,10 @@ public class DocumentGeneratorServiceImpl {
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
 
     // 测试环境
-    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
+//    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIBHJR/OpenAPI.do";
     // 开发环境
-//    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
+    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
 //
     // uat
 //    private static final  String url = "https://appapitest.zlfund.cn/OpenAPI.do";
@@ -79,7 +79,7 @@ public class DocumentGeneratorServiceImpl {
             DESEncHelper des = DESEncHelper.getInstance();
             try {
                 String domain =  des.encrypt(reqJson.toString());
-                param = new NameValuePair[]{new NameValuePair("domain", domain.toString())};
+                param = new NameValuePair[]{new NameValuePair("message", domain.toString())};
             } catch(Exception e) {
 
             }
@@ -127,6 +127,16 @@ public class DocumentGeneratorServiceImpl {
         if (StringUtils.isBlank(responseStr)){
             System.out.println("为空！");
             return "" ;
+        }
+        if ("3291".equals(bizcode)){
+            try{
+                JSONObject jsonObj = JSONObject.fromObject(responseStr);
+                String data = (String) jsonObj.get("data");
+                service.util.DESEncHelper des = service.util.DESEncHelper.getInstance();
+                responseStr = des.decrypt(data);
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         JSONObject jsonObj = JSONObject.fromObject(responseStr);
         JSONObject msg1 = (JSONObject) jsonObj.get("msg");
