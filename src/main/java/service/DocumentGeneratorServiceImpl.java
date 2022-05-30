@@ -31,7 +31,7 @@ public class DocumentGeneratorServiceImpl {
 //    private static final  String url = "https://appapitest.zlfund.cn/OpenAPI.do";
 
 
-    //        private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
+//            private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
     private static final  String mctcode = "1000";
     // ef2c0ef8385db0effdda73fad2cf32b0   1000
     // 167eef0c6c834b5b94322ecbf87ab108 1003

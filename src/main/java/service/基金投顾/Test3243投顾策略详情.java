@@ -29,7 +29,7 @@ public class Test3243投顾策略详情 extends DocumentGeneratorServiceImpl {
     public static JSONObject setBody(String bizcode, String custNo){
 
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("fundid", "C21001");
+        bodyJson.put("fundid", "C21002");
 
         return bodyJson;
     }
