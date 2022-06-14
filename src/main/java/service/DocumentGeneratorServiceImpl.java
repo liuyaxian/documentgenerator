@@ -72,13 +72,18 @@ public class DocumentGeneratorServiceImpl {
     public static String requestUrl(String custno, String tradeacco, String passwd, String bizcode, String bizcodeDesc,JSONObject requestBodyJson) throws IOException {
         JSONObject reqJson = createReqJson(bizcode, custno, tradeacco, passwd, requestBodyJson);
 
+
+//        String data2 = "ewef{f\"msg\":{\"head\":{\"version\":\"4.0\",\"appversion\":\"4.5.3\",\"appversionCode\":\"4053\",\"bizcode\":\"3291\",\"devicetype\":\"Android\",\"senddate\":\"20220613\",\"sendtime\":\"103226\",\"seqid\":\"dfc38a2c73b54e71b523625c9377aea4\",\"mctcode\":\"1000\"},\"body\":{\"domain\":\"appapi.zlfund.cn\"}},\"signtype\":\"m\",\"sign\":\"8de8dbb0922aa1ab4909376b649b4b52\"}ffd";
         System.out.println("请求json:" + reqJson.toString());
         NameValuePair[] param = {new NameValuePair("data", reqJson.toString())};
+//        NameValuePair[] param = {new NameValuePair("data", data2)};
+
         if ("3291".equals(bizcode)){
             // 解密字符串
             DESEncHelper des = DESEncHelper.getInstance();
             try {
                 String domain =  des.encrypt(reqJson.toString());
+//                String domain = "";
                 param = new NameValuePair[]{new NameValuePair("message", domain.toString())};
             } catch(Exception e) {
 
@@ -99,6 +104,12 @@ public class DocumentGeneratorServiceImpl {
         sb.append("**接口类型**" + "\n\n");
         sb.append("POST请求，后台调用，传输数据格式为Json。" + "\n\n\n\n");
         sb.append("不需要身份鉴权。" + "\n\n\n\n");
+        sb.append("**相关表**" + "\n");
+        sb.append("```sql"+ "\n");
+        sb.append("```"+ "\n\n");
+        sb.append("**restful请求URL**" + "\n");
+        sb.append("```xml"+ "\n");
+        sb.append("```"+ "\n");
         sb.append("**请求方向**" + "\n\n");
         sb.append("商户->众禄" + "\n\n\n\n");
         sb.append("接口参数" + "\n\n");

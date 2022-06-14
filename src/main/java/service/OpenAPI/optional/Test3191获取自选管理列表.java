@@ -5,7 +5,7 @@ import service.DocumentGeneratorServiceImpl;
 
 import java.io.IOException;
 
-public class Test3191  extends DocumentGeneratorServiceImpl {
+public class Test3191获取自选管理列表 extends DocumentGeneratorServiceImpl {
 
     private static final  String bizcode = "3191";
     private static final  String bizcodeDesc = "获取自选管理列表";

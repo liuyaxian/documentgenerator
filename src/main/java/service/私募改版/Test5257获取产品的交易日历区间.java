@@ -1,22 +1,16 @@
-package service.安心签;
+package service.私募改版;
 
 import net.sf.json.JSONObject;
 import service.DocumentGeneratorServiceImpl;
 
-/**
- * @desc:
- * @author: admin
- * @since: 2021/11/2 15:11
- * @history:
- */
-public class Test3137个人开户3001   extends DocumentGeneratorServiceImpl {
+public class Test5257获取产品的交易日历区间 extends DocumentGeneratorServiceImpl {
 
-    private static final  String bizcode = "3137";
-    private static final  String bizcodeDesc = "3137个人开户3001";
+    private static final  String bizcode = "5257";
+    private static final  String bizcodeDesc = "获取产品的交易日历区间";
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883516";
+        String custNo =  "1001883551";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
@@ -28,7 +22,13 @@ public class Test3137个人开户3001   extends DocumentGeneratorServiceImpl {
 
     public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("mctcustno", "1001883516");
+
+        bodyJson.put("fundid","SCW165");
+
+
+
         return bodyJson;
     }
 }
+
+

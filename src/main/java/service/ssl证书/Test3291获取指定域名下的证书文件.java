@@ -60,7 +60,7 @@ public class Test3291获取指定域名下的证书文件  extends DocumentGener
                 threadFactory,
                 handler
         );
-        for (int i = 0; i < 2000000; i++) {
+        for (int i = 0; i < 1; i++) {
             threadPoolExecutor.execute(() -> {
                 for (String domain : domainList) {
                     JSONObject bodyJson12 = setBody(bizcode, custNo, domain);

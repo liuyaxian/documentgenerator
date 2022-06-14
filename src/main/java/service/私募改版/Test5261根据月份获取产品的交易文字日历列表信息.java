@@ -1,16 +1,16 @@
-package service.OpenAPI.optional;
+package service.私募改版;
 
 import net.sf.json.JSONObject;
 import service.DocumentGeneratorServiceImpl;
 
-public class Test3181  extends DocumentGeneratorServiceImpl {
+public class Test5261根据月份获取产品的交易文字日历列表信息 extends DocumentGeneratorServiceImpl {
 
-    private static final  String bizcode = "3181";
-    private static final  String bizcodeDesc = "新增分组";
+    private static final  String bizcode = "5261";
+    private static final  String bizcodeDesc = "根据月份获取产品的交易文字日历列表信息";
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001881673";
+        String custNo =  "1001883551";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
@@ -20,10 +20,19 @@ public class Test3181  extends DocumentGeneratorServiceImpl {
         requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson);
     }
 
-    public static JSONObject setBody(String bizcode, String custNo){
+    public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
-            bodyJson.put("groupName", "新增分组2");
+
+        bodyJson.put("fundid","SCW165");
+        bodyJson.put("datetime","20220109");
+        bodyJson.put("pagesize", 1);
+        bodyJson.put("pageindex",1);
+
+
+
 
         return bodyJson;
     }
 }
+
+

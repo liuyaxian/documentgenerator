@@ -10,7 +10,7 @@ import java.io.IOException;
 /**8
  * 3189 添加自选基金
  */
-public class Test3189  extends DocumentGeneratorServiceImpl {
+public class Test3189添加自选基金 extends DocumentGeneratorServiceImpl {
 
     private static final  String bizcode = "3189";
     private static final  String bizcodeDesc = "添加自选基金";
@@ -30,7 +30,7 @@ public class Test3189  extends DocumentGeneratorServiceImpl {
 
     public static JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
-        String str = "[{'fundId':'161111'}]";
+        String str = "[{'fundId':'XZG100'}]";
 
         JSONArray jsonArray = JSONArray.fromObject(str);
         JSONArray.toList(jsonArray, new CustOptionalFund(),  new JsonConfig());

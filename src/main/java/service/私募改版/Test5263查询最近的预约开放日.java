@@ -1,21 +1,16 @@
-package service.OpenAPI.optional;
+package service.私募改版;
 
 import net.sf.json.JSONObject;
 import service.DocumentGeneratorServiceImpl;
 
-import java.io.IOException;
+public class Test5263查询最近的预约开放日 extends DocumentGeneratorServiceImpl {
 
-/***
- * 3193 将持仓基金导入自选基金
- */
-public class Test3193  extends DocumentGeneratorServiceImpl {
+    private static final  String bizcode = "5263";
+    private static final  String bizcodeDesc = "查询最近的预约开放日";
 
-    private static final  String bizcode = "3193";
-    private static final  String bizcodeDesc = "将持仓基金导入自选基金";
-
-    public static void main(String[] args) throws IOException, Exception {
+    public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001881673";
+        String custNo =  "1001883551";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
@@ -25,8 +20,10 @@ public class Test3193  extends DocumentGeneratorServiceImpl {
         requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson);
     }
 
-    public static JSONObject setBody(String bizcode, String custNo){
+    public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
+
+        bodyJson.put("fundid","SQG330");
 
         return bodyJson;
     }

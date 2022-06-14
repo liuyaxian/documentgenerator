@@ -3,16 +3,10 @@ package service.安心签;
 import net.sf.json.JSONObject;
 import service.DocumentGeneratorServiceImpl;
 
-/**
- * @desc:
- * @author: admin
- * @since: 2021/11/2 15:11
- * @history:
- */
-public class Test3137个人开户3001   extends DocumentGeneratorServiceImpl {
+public class Test3167协议书确认留痕  extends DocumentGeneratorServiceImpl {
 
-    private static final  String bizcode = "3137";
-    private static final  String bizcodeDesc = "3137个人开户3001";
+    private static final  String bizcode = "3167";
+    private static final  String bizcodeDesc = "3167协议书确认留痕";
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
@@ -28,7 +22,12 @@ public class Test3137个人开户3001   extends DocumentGeneratorServiceImpl {
 
     public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("mctcustno", "1001883516");
+        bodyJson.put("userId", "C54519845C277CF1E05312016B0A937F");
+        bodyJson.put("projectCode", "1212121111111");
+        bodyJson.put("contractTypeCode", "esign");
+        bodyJson.put("fundid", "SCW165");
+        bodyJson.put("filePath", "1001546061");
+
         return bodyJson;
     }
 }

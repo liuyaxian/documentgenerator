@@ -1,20 +1,16 @@
-package service.OpenAPI.optional;
+package service.私募改版;
 
 import net.sf.json.JSONObject;
 import service.DocumentGeneratorServiceImpl;
 
-/***
- * 3185 产品迁移到指定分组
- */
-public class Test3185MigrateFundToCustOptionalGroup  extends DocumentGeneratorServiceImpl {
+public class Test5255获取产品收款账号 extends DocumentGeneratorServiceImpl {
 
-    private static final  String bizcode = "3185";
-    private static final  String bizcodeDesc = "产品迁移到指定分组";
+    private static final  String bizcode = "5255";
+    private static final  String bizcodeDesc = "获取产品收款账号";
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883516";
-
+        String custNo =  "1001883551";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
@@ -24,17 +20,15 @@ public class Test3185MigrateFundToCustOptionalGroup  extends DocumentGeneratorSe
         requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson);
     }
 
-    public static JSONObject setBody(String bizcode, String custNo){
+    public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
 
-
-        bodyJson.put("removeFundIds", "260108");
-
-        bodyJson.put("immigrateGroupIds", "857983,857949");
+        bodyJson.put("fundid","PF0002");
 
 
-//        bodyJson.put("deleteGroupIds", "-1");
 
         return bodyJson;
     }
 }
+
+

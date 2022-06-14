@@ -1,18 +1,12 @@
-package service.安心签;
+package service.OpenAPI.optional;
 
 import net.sf.json.JSONObject;
 import service.DocumentGeneratorServiceImpl;
 
-/**
- * @desc:
- * @author: admin
- * @since: 2021/11/2 15:11
- * @history:
- */
-public class Test3137个人开户3001   extends DocumentGeneratorServiceImpl {
+public class Test3181新增单个分组管理 extends DocumentGeneratorServiceImpl {
 
-    private static final  String bizcode = "3137";
-    private static final  String bizcodeDesc = "3137个人开户3001";
+    private static final  String bizcode = "3181";
+    private static final  String bizcodeDesc = "新增分组";
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
@@ -26,9 +20,10 @@ public class Test3137个人开户3001   extends DocumentGeneratorServiceImpl {
         requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson);
     }
 
-    public static  JSONObject setBody(String bizcode, String custNo){
+    public static JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("mctcustno", "1001883516");
+            bodyJson.put("groupName", "9876554");
+
         return bodyJson;
     }
 }

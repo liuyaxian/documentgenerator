@@ -9,7 +9,7 @@ import java.util.ArrayList;
 /***
  * 3175 批量更新自选管理
  */
-public class Test3175BatchUpdateCustOptionalFund extends DocumentGeneratorServiceImpl {
+public class Test3175批量更新自选管理 extends DocumentGeneratorServiceImpl {
 
     private static final  String bizcode = "3175";
     private static final  String bizcodeDesc = "批量更新自选管理";
