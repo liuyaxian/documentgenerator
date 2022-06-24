@@ -30,6 +30,8 @@ public class Test3159查询已签署合同信息   extends DocumentGeneratorServ
         JSONObject bodyJson = new JSONObject();
         bodyJson.put("fundid", "SQW359");
         bodyJson.put("projectCode", "202110281421520257004807");
+        bodyJson.put("contractTypeCode", "visit");
+
         bodyJson.put("serialno", "202109101137409392004807");
 
         return bodyJson;

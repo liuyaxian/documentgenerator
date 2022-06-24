@@ -17,7 +17,7 @@ import java.nio.file.Paths;
 public class Test3151自定义pdf上传合同签署3203 extends DocumentGeneratorServiceImpl {
 
     private static final  String bizcode = "3151";
-    private static final  String bizcodeDesc = "3151自定义pdf上传合同签署3203 ";
+    private static final  String bizcodeDesc = "3151自定义pdf上传合同签署3203";
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空

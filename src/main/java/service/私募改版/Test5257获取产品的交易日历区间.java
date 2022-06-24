@@ -10,7 +10,7 @@ public class Test5257获取产品的交易日历区间 extends DocumentGenerator
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883551";
+        String custNo =  "1001883923";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111

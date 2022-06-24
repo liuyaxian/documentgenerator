@@ -24,6 +24,7 @@ public class Test3157查询合同模板信息  extends DocumentGeneratorServiceI
         JSONObject bodyJson = new JSONObject();
         bodyJson.put("fundid", "SCW165");
         bodyJson.put("projectCode", "202110281421520257004807");
+        bodyJson.put("signListType", "replenish");
 
         return bodyJson;
     }

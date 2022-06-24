@@ -31,6 +31,8 @@ public class Test2215五要素开户申请  extends DocumentGeneratorServiceImpl
         bodyJson.put("custname", "21");
         bodyJson.put("bankid", "ICBC");
         bodyJson.put("idtype", "0");
+        bodyJson.put("custname", "李萍");
+
         bodyJson.put("bankacco", "6666666688888888");
         bodyJson.put("mobileno", "13068149322");
         bodyJson.put("idno", "44142619951028092X");

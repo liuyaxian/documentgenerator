@@ -33,15 +33,15 @@ public class Test3155创建本地签署3401  extends DocumentGeneratorServiceImp
 
     public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("userId", "C54519845C277CF1E05312016B0A937F");
+        bodyJson.put("userId", "E1A09631DD7B0DBCE05311016B0AD5C7");
         bodyJson.put("fundid", "SCW165");
-        bodyJson.put("projectCode", "1212121111111");
-        bodyJson.put("contractTypeCode", "contract");
+        bodyJson.put("projectCode", "202206200956323116100007");
+        bodyJson.put("contractTypeCode", "undertake");
         bodyJson.put("tradeacco", "1001883516");
-        bodyJson.put("subamt","123456789.222");
+        bodyJson.put("subamt","1.222");
 
         try {
-            bodyJson.put("imageData", Base64.toBase64String(Files.readAllBytes(Paths.get("C:\\Users\\Administrator\\Desktop\\签名.png"))));
+            bodyJson.put("imageData", Base64.toBase64String(Files.readAllBytes(Paths.get("C:\\Users\\liu_y\\Desktop\\17.png"))));
         } catch (IOException e) {
             e.printStackTrace();
         }

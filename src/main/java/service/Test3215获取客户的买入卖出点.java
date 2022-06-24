@@ -15,7 +15,7 @@ public class Test3215获取客户的买入卖出点 extends DocumentGeneratorSer
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883516";
+        String custNo =  "1001883566";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
@@ -27,7 +27,7 @@ public class Test3215获取客户的买入卖出点 extends DocumentGeneratorSer
 
     public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("fundid", "000928");
+        bodyJson.put("fundid", "SCW165");
         bodyJson.put("startdate", "20180101");
         bodyJson.put("enddate", "20221230");
 
