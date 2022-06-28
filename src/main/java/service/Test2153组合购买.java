@@ -34,6 +34,13 @@ public class Test2153组合购买 extends DocumentGeneratorServiceImpl {
         bodyJson.put("agreerisk", "1");
         bodyJson.put("portfoliofundid", "XJB001");
 //        JSONArray jsonArray = JSON.parseArray(str);
+        // https://andisec.com/anquanyanjiu19fastjsonautotype.html
+        // 【漏洞预警】Fastjson autoType 绕过漏洞
+        String json = "{\"@type\":\"******\",\"@type\":\"*******\",\"value\":\"calc\"}";
+
+//        String json = "{\"@type\":\"******\"}";
+        JSON.parse(json);
+
         bodyJson.put("fundidarr", JSON.parseArray(str, FundInfo.class));
         bodyJson.put("totalsubamt", 300);
         bodyJson.put("bankcmd", "1");

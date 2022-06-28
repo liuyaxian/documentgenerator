@@ -27,10 +27,10 @@ public class Test3291获取指定域名下的证书文件  extends DocumentGener
         List<String> domainList = new ArrayList<>();
         domainList.add("jjmmw.com");
         domainList.add("xuezhanggui.com");
-//        domainList.add("appapi.zlfund.cn");
-//        domainList.add("officeapi.zlfund.cn");
         domainList.add("zljys.cn");
         domainList.add("zlfund.cn");
+//        domainList.add("officeapi.zlfund.cn");
+//        domainList.add("appapi.zlfund.cn");
 //        (int corePoolSize,
 //        int maximumPoolSize,
 //        long keepAliveTime,
@@ -80,6 +80,7 @@ public class Test3291获取指定域名下的证书文件  extends DocumentGener
     public static  JSONObject setBody(String bizcode, String custNo, String domain){
         JSONObject bodyJson = new JSONObject();
         bodyJson.put("domain", domain);
+        bodyJson.put("domain", domain);
         return bodyJson;
-    }
+     }
 }

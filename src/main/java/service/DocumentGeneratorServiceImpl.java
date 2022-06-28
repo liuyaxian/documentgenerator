@@ -22,10 +22,10 @@ public class DocumentGeneratorServiceImpl {
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
 
     // 测试环境
-    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
+//    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIBHJR/OpenAPI.do";
     // 开发环境
-//    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
+    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
 //
     // uat
 //    private static final  String url = "https://appapitest.zlfund.cn/OpenAPI.do";
@@ -39,7 +39,7 @@ public class DocumentGeneratorServiceImpl {
     // 3c05f9e358214fc78cb8a1a0020540f6  0040
     private static final  String sign = "ef2c0ef8385db0effdda73fad2cf32b0";
     private static final  String version = "4.0";
-    private static final  String appversion = "2.2.2";
+    private static final  String appversion = "4.5.4";
     private static final  String appversionCode = "";
 
 //    public static void main(String[] args) throws IOException, Exception {

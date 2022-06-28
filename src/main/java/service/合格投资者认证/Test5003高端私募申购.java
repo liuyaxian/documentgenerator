@@ -5,6 +5,7 @@ import service.DocumentGeneratorServiceImpl;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
@@ -34,6 +35,7 @@ public class Test5003高端私募申购 extends DocumentGeneratorServiceImpl {
         JSONObject bodyJson = new JSONObject();
 //        bodyJson.put("fundid", "SCV893");
 
+        Pattern pattern  = Pattern.compile("\\d\\w\\R\n");
         bodyJson.put("agreerisk", "1");
         bodyJson.put("subamt", "404000");
         bodyJson.put("paymenttp", "1");

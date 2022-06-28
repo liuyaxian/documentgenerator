@@ -24,8 +24,8 @@ public class Test5261根据月份获取产品的交易文字日历列表信息 e
         JSONObject bodyJson = new JSONObject();
 
         bodyJson.put("fundid","SCW165");
-        bodyJson.put("datetime","20220109");
-        bodyJson.put("pagesize", 1);
+        bodyJson.put("datetime","20220628");
+        bodyJson.put("pagesize", 10);
         bodyJson.put("pageindex",1);
 
 
