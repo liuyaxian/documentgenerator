@@ -3,10 +3,10 @@ package service.私募改版;
 import net.sf.json.JSONObject;
 import service.DocumentGeneratorServiceImpl;
 
-public class Test5273高端私募持仓  extends DocumentGeneratorServiceImpl {
+public class Test5273客户产品维度的持仓 extends DocumentGeneratorServiceImpl {
 
     private static final  String bizcode = "5273";
-    private static final  String bizcodeDesc = "高端私募持仓";
+    private static final  String bizcodeDesc = "客户产品维度的持仓";
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空 1001883450 1001883516
@@ -22,6 +22,7 @@ public class Test5273高端私募持仓  extends DocumentGeneratorServiceImpl {
 
     public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
+        bodyJson.put("zlbalancetype", "3");
         return bodyJson;
     }
 }
