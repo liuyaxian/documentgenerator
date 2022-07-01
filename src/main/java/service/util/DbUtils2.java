@@ -81,6 +81,43 @@ public class DbUtils2 {
         return  null;
     }
 
+
+    public static <T> List<T> queryCursorList(String sql, DbUtils.RowMapper<T> mapper, Object ...args ){
+
+        if (mapper == null){
+            return  null;
+        }
+        try {
+            Class.forName(classname);
+            try(Connection connection = DriverManager.getConnection(url , user, password);
+                CallableStatement cs = connection.prepareCall(sql, ResultSet.TYPE_SCROLL_INSENSITIVE,
+                        ResultSet.CONCUR_READ_ONLY);
+                PreparedStatement preparedStatement = connection.prepareCall(sql);){
+                for (int i = 0; i < args.length; i++) {
+                    preparedStatement.setObject(i+1, args[i]);
+                }
+//                preparedStatement.
+//                cs.registerOutParameter(2, Types.OTHER);
+
+
+                ResultSet resultSet = preparedStatement.executeQuery();
+
+                List<T>  result = new ArrayList<>();
+                int row = 0;
+                // 让游标指向下一行记录
+                while (resultSet.next()){
+                    result.add(mapper.map(resultSet, row++));
+                }
+                resultSet.close();
+                return result;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            System.out.println("e.getMessage() = " + e.getMessage());
+        }
+        return  null;
+    }
+
     public   interface  RowMapper<T> {
         T map(ResultSet rs, int row) throws SQLException;
     }

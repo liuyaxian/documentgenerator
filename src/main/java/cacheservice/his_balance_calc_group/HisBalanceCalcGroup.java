@@ -1,4 +1,4 @@
-package cacheservice;
+package cacheservice.his_balance_calc_group;
 
 import com.mongodb.*;
 import service.util.DbUtils2;
@@ -68,6 +68,7 @@ public class HisBalanceCalcGroup {
         String collName = "his_balance_calc_group";
         deleteCollMongoDb(collName, custno);
         List<HisBalanceCalcGroupInfo> hisBalanceCalcGroupInfos = querHisBalanceCalcGroupList(custno);
+        System.out.printf("his_balance_calc_group 客户号："+ custno + " 刷新总数："+ hisBalanceCalcGroupInfos.size());
         pushCollMongoDb("his_balance_calc_group", hisBalanceCalcGroupInfos);
     }
 
