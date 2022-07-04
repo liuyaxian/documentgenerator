@@ -42,6 +42,9 @@ select *from  public.traderequest_to_history('202207011410143361100007')
 select * from cq_insert_or_update_pf_fundbalance('D30034','20220529','1001883979' ,'1001546455');
 --历史表
 select * from v_h_pf_traderequest_with_status vhptws  where custno ='1001883979';
+-- 侧袋资金 APKIND = '898' RETCODE = '0000'
+select * from pf_acktradeblotter_sidebag;
+
 -- 私募 end ---
 
 
