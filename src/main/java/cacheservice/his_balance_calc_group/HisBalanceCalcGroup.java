@@ -15,9 +15,15 @@ public class HisBalanceCalcGroup {
         String sql1 = " select custno,\n" +
                 "                                           fundid,\n" +
                 "                                           nav,\n" +
-                "                                           navdt,\n" +
-                "                                           workdate,\n" +
-                "                                          announcedate,\n" +
+                "                                       '20220629'    navdt,\n" +
+                "                                       '20220630'    workdate,\n" +
+                "          sum(mktvalue) mktvalue,  \n" +
+                "            sum(totalin) totalin,\n" +
+                "            '1000' partnerno,\n" +
+                "            1.1 netamt,\n" +
+                "            1.12 fundincome,\n" +
+
+                "                                        '20220630'  announcedate,\n" +
                 "                                           sum(balance) balance,\n" +
                 "                                           sum(profit) profit,\n" +
                 "                                           sum(dayprofit) dayprofit,\n" +
@@ -39,7 +45,11 @@ public class HisBalanceCalcGroup {
             hisBalanceCalcGroup.setProfit(rs.getDouble("profit"));
             hisBalanceCalcGroup.setProfitprop(rs.getDouble("profitprop"));
             hisBalanceCalcGroup.setCustno(rs.getString("custno"));
-
+            hisBalanceCalcGroup.setMktvalue(rs.getDouble("mktvalue"));
+            hisBalanceCalcGroup.setTotalin(rs.getDouble("totalin"));
+            hisBalanceCalcGroup.setPartnerno(rs.getString("partnerno"));
+            hisBalanceCalcGroup.setNetamt(rs.getDouble("netamt"));
+            hisBalanceCalcGroup.setFundincome(rs.getDouble("fundincome"));
             return hisBalanceCalcGroup;
         }, custno);
     }
@@ -58,7 +68,7 @@ public class HisBalanceCalcGroup {
         DBCollection custOptionalFundColl = db.getCollection(collName);
         for (HisBalanceCalcGroupInfo hisBalanceCalcGroupInfo : hisBalanceCalcGroupInfos){
             DBObject  object = ObjectUtils.beanToDBObject(hisBalanceCalcGroupInfo);
-            object.put("_id", hisBalanceCalcGroupInfo.getCustno()+hisBalanceCalcGroupInfo.getFundid());
+            object.put("_id", hisBalanceCalcGroupInfo.getCustno()+hisBalanceCalcGroupInfo.getFundid() + hisBalanceCalcGroupInfo.getNavdt());
             custOptionalFundColl.save(object, WriteConcern.MAJORITY);
         }
     }

@@ -12,7 +12,55 @@ public class HisBalanceCalcGroupInfo {
     private double profit;
     private double dayprofit;
     private double  profitprop;
+    private double mktvalue;
+    private double totalin;
+    private String partnerno;
+    private double netamt;
 
+    private double fundincome;
+
+
+
+
+    public double getFundincome() {
+        return fundincome;
+    }
+
+    public void setFundincome(double fundincome) {
+        this.fundincome = fundincome;
+    }
+
+    public double getMktvalue() {
+        return mktvalue;
+    }
+
+    public void setMktvalue(double mktvalue) {
+        this.mktvalue = mktvalue;
+    }
+
+    public double getTotalin() {
+        return totalin;
+    }
+
+    public void setTotalin(double totalin) {
+        this.totalin = totalin;
+    }
+
+    public String getPartnerno() {
+        return partnerno;
+    }
+
+    public void setPartnerno(String partnerno) {
+        this.partnerno = partnerno;
+    }
+
+    public double getNetamt() {
+        return netamt;
+    }
+
+    public void setNetamt(double netamt) {
+        this.netamt = netamt;
+    }
 
     public String getFundid() {
         return fundid;

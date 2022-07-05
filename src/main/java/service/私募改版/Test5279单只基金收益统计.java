@@ -16,8 +16,8 @@ public class Test5279单只基金收益统计 extends DocumentGeneratorServiceIm
         // 交易密码 111111
         String passwd = "";
         JSONObject bodyJson =  setBody(bizcode, custNo);
-        // 1001546198	1001883763
-        requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson);
+        String isAuth = "1";
+        requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson, isAuth);
     }
 
     public static  JSONObject setBody(String bizcode, String custNo){

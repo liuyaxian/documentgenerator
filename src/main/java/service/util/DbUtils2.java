@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class DbUtils2 {
     private static String classname = "org.postgresql.Driver";
-    private static String url = "jdbc:postgresql://172.18.10.171:54320/trade";
+    private static String url = "jdbc:postgresql://172.18.10.73:54320/trade";
     private static String user = "zlfund";
     private static String password = "zlfundzlfund";
 

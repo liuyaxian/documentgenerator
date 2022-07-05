@@ -22,11 +22,9 @@ public class ZLappHomeDateAuto {
     private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
     //        private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
 
-    // 3117 首页新发基金查询
-    public void homeXfjjInfo() throws IOException {
-    }
+
     public void baseService(String bizCode, String custNo, String tradeacco, String passwd, JSONObject requestBodyJson) throws IOException {
-        JSONObject reqJson = documentGeneratorServiceImpl.createReqJson(bizCode, custNo, tradeacco, passwd, requestBodyJson);
+        JSONObject reqJson = documentGeneratorServiceImpl.createReqJson(bizCode, custNo, tradeacco, passwd, requestBodyJson, "");
         NameValuePair[] param = {new NameValuePair("data", reqJson.toString())};
         PostMethod method = new PostMethod(url);
         method.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
@@ -43,7 +41,24 @@ public class ZLappHomeDateAuto {
             Object object = bodyJson.get(key);
         }
     }
-
+    public void baseService(String bizCode, String custNo, String tradeacco, String passwd, JSONObject requestBodyJson, String isAuth) throws IOException {
+        JSONObject reqJson = documentGeneratorServiceImpl.createReqJson(bizCode, custNo, tradeacco, passwd, requestBodyJson, isAuth);
+        NameValuePair[] param = {new NameValuePair("data", reqJson.toString())};
+        PostMethod method = new PostMethod(url);
+        method.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        method.setRequestBody(param);
+        method.setParameter("bizcode", "1000");
+        method.setDoAuthentication(true);
+        HttpClient client = new HttpClient();
+        client.executeMethod(method);
+        String resStr = method.getResponseBodyAsString();
+        JSONObject bodyJson  = (JSONObject) JSONObject.fromObject(resStr).get("body");
+        Iterator<String> keys = bodyJson.keys();
+        while (keys.hasNext()) {
+            String key = keys.next();
+            Object object = bodyJson.get(key);
+        }
+    }
 
     public static void main(String[] args) throws IOException, IllegalAccessException {
         String[] titles = new String[]{"ID","姓名"};

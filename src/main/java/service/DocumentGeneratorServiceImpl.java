@@ -1,6 +1,7 @@
 package service;
 
 
+import org.apache.commons.httpclient.Header;
 import service.util.DESEncHelper;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -19,6 +20,10 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class DocumentGeneratorServiceImpl {
+
+    // uat
+//    private static final  String url = "https://appapitest.zlfund.cn/OpenAPI.do";
+
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
 
     // 测试环境
@@ -26,12 +31,8 @@ public class DocumentGeneratorServiceImpl {
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIBHJR/OpenAPI.do";
     // 开发环境
     private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
-//
-    // uat
-//    private static final  String url = "https://appapitest.zlfund.cn/OpenAPI.do";
 
 
-//            private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
     private static final  String mctcode = "1000";
     // ef2c0ef8385db0effdda73fad2cf32b0   1000
     // 167eef0c6c834b5b94322ecbf87ab108 1003
@@ -41,34 +42,21 @@ public class DocumentGeneratorServiceImpl {
     private static final  String version = "4.0";
     private static final  String appversion = "4.5.4";
     private static final  String appversionCode = "";
-
-//    public static void main(String[] args) throws IOException, Exception {
-//        // 需要鉴权的接口 custNo 不为为空
-//        String custNo =  "1001883763";
-//        // 需要数据交易密码的接口
-//        String tradeacco = "";
-//        // 交易密码 111111
-//        String passwd = "";
-//        // 1001546198	1001883763
-//        requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc);
-//    }
+    private static final  String CONTENTTYPE = "application/x-www-form-urlencoded;charset=utf-8";
 
 
-    // body 组装
-    public static JSONObject setBody(String bizcode, String custNo){
-        JSONObject bodyJson = new JSONObject();
-        // 个人开户3001
-        if ("3137".equals(bizcode)){
-            bodyJson.put("personName", "刘思");
-            bodyJson.put("identNo", "1234567890");
-            bodyJson.put("mobilePhone", "17666100076");
-            bodyJson.put("authenticationMode", "公安部");
-        }
-        return bodyJson;
-    }
-
-
-
+    /**
+     * only  3291 接口
+     * @param custno
+     * @param tradeacco
+     * @param passwd
+     * @param bizcode
+     * @param bizcodeDesc
+     * @param requestBodyJson
+     * @return
+     * @throws IOException
+     */
+    @Deprecated
     public static String requestUrl(String custno, String tradeacco, String passwd, String bizcode, String bizcodeDesc,JSONObject requestBodyJson) throws IOException {
         JSONObject reqJson = createReqJson(bizcode, custno, tradeacco, passwd, requestBodyJson);
 
@@ -78,17 +66,16 @@ public class DocumentGeneratorServiceImpl {
         NameValuePair[] param = {new NameValuePair("data", reqJson.toString())};
 //        NameValuePair[] param = {new NameValuePair("data", data2)};
 
-        if ("3291".equals(bizcode)){
-            // 解密字符串
-            DESEncHelper des = DESEncHelper.getInstance();
-            try {
-                String domain =  des.encrypt(reqJson.toString());
-//                String domain = "";
-                param = new NameValuePair[]{new NameValuePair("message", domain.toString())};
-            } catch(Exception e) {
-
-            }
-        }
+//        if ("3291".equals(bizcode)){
+//            // 解密字符串
+//            DESEncHelper des = DESEncHelper.getInstance();
+//            try {
+//                String domain =  des.encrypt(reqJson.toString());
+//                param = new NameValuePair[]{new NameValuePair("message", domain.toString())};
+//            } catch(Exception e) {
+//
+//            }
+//        }
 
         PostMethod method = new PostMethod(url);
         method.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
@@ -117,6 +104,8 @@ public class DocumentGeneratorServiceImpl {
         sb.append("bizcode:"+ bizcode + "\n\n");
         sb.append("请求报文："+ "\n\n");
         sb.append("```json"+ "\n\n");
+        Header header = method.getResponseHeader("Content-Type");
+        System.out.println(header.getValue());
         String reqJsonStr = formatJson(reqJson.toString());
         sb.append(reqJsonStr + "\n");
         sb.append("```" + "\n\n\n");
@@ -139,16 +128,16 @@ public class DocumentGeneratorServiceImpl {
             System.out.println("为空！");
             return "" ;
         }
-        if ("3291".equals(bizcode)){
-            try{
-                JSONObject jsonObj = JSONObject.fromObject(responseStr);
-                String data = (String) jsonObj.get("data");
-                service.util.DESEncHelper des = service.util.DESEncHelper.getInstance();
-                responseStr = des.decrypt(data);
-            }catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+//        if ("3291".equals(bizcode)){
+//            try{
+//                JSONObject jsonObj = JSONObject.fromObject(responseStr);
+//                String data = (String) jsonObj.get("data");
+//                service.util.DESEncHelper des = service.util.DESEncHelper.getInstance();
+//                responseStr = des.decrypt(data);
+//            }catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
         JSONObject jsonObj = JSONObject.fromObject(responseStr);
         JSONObject msg1 = (JSONObject) jsonObj.get("msg");
         JSONObject bodyJson1 = (JSONObject) msg1.get("body");
@@ -158,6 +147,84 @@ public class DocumentGeneratorServiceImpl {
         return reqJsonStr;
     }
 
+
+
+    public static String requestUrl(String custno, String tradeacco, String passwd, String bizcode, String bizcodeDesc,JSONObject requestBodyJson, String isAuth) throws IOException {
+        JSONObject reqJson = createReqJson(bizcode, custno, tradeacco, passwd, requestBodyJson, isAuth);
+
+        System.out.println("请求json:" + reqJson.toString());
+        NameValuePair[] param = {new NameValuePair("data", reqJson.toString())};
+
+        PostMethod method = new PostMethod(url);
+        method.setRequestHeader("Content-Type", CONTENTTYPE);
+        method.setRequestBody(param);
+        method.setParameter("bizcode",bizcode);
+        method.setDoAuthentication(true);
+        HttpClient client = new HttpClient();
+        client.executeMethod(method);
+        return  writeWords(method, bizcode, bizcodeDesc, reqJson, isAuth);
+    }
+
+
+    // 打印日志
+    public static String writeWords(PostMethod method, String bizcode, String bizcodeDesc, JSONObject reqJson, String isAuth) throws IOException {
+        StringBuffer sb = new StringBuffer();
+        sb.append("### ").append(bizcode + " " + bizcodeDesc + "\n\n");
+        sb.append("**功能描述**" + "\n\n");
+        sb.append(bizcodeDesc + "\n\n");
+        sb.append("**接口类型**" + "\n\n");
+        sb.append("POST请求，后台调用，传输数据格式为Json。" + "\n\n\n\n");
+        if (StringUtils.isNotBlank(isAuth) && "1".equals(isAuth)){
+            sb.append("需要身份鉴权。" + "\n\n\n\n");
+        } else {
+            sb.append("不需要身份鉴权。" + "\n\n\n\n");
+        }
+
+        sb.append("**相关表**" + "\n");
+        sb.append("```sql"+ "\n");
+        sb.append("```"+ "\n\n");
+        sb.append("**restful请求URL**" + "\n");
+        sb.append("```xml"+ "\n");
+        sb.append("```"+ "\n");
+        sb.append("**请求方向**" + "\n\n");
+        sb.append("商户->众禄" + "\n\n\n\n");
+        sb.append("接口参数" + "\n\n");
+        sb.append("**请求参数**" + "\n\n");
+        sb.append("bizcode:"+ bizcode + "\n\n");
+        sb.append("请求报文："+ "\n\n");
+        sb.append("```json"+ "\n\n");
+        Header header = method.getResponseHeader("Content-Type");
+        System.out.println(header.getValue());
+        String reqJsonStr = formatJson(reqJson.toString());
+        sb.append(reqJsonStr + "\n");
+        sb.append("```" + "\n\n\n");
+        sb.append("| **字段名称** | **Json path**   | **格式** | **必填** | **备注**   |" + "\n");
+        sb.append("| ------------ | --------------- | -------- | -------- | ---------- | " + "\n");
+        JSONObject msg = (JSONObject) reqJson.get("msg");
+        JSONObject bodyJson = (JSONObject) msg.get("body");
+        setRequestValue(bodyJson,  sb, " body/");
+        sb.append("\n\n\n"+"**响应参数**" + "\n\n\n");
+        int code = Integer.parseInt(bizcode) + 1;
+        sb.append("bizcode:" +  code + "\n\n\n");
+        sb.append("响应报文："+ "\n\n");
+        sb.append("```json" + "\n\n");
+        sb.append(formatJson(method.getResponseBodyAsString())+ "\n\n\n");
+        sb.append("```" + "\n\n\n");
+        sb.append("| **字段名称**   | **Json path** | **格式** | **必填** | **备注**  |" + "\n");
+        sb.append("| -------------- | ------------------------------ | -------- | -------- | ------- |" + "\n");
+        String responseStr = method.getResponseBodyAsString();
+        if (StringUtils.isBlank(responseStr)){
+            System.out.println("为空！");
+            return "";
+        }
+        JSONObject jsonObj = JSONObject.fromObject(responseStr);
+        JSONObject msg1 = (JSONObject) jsonObj.get("msg");
+        JSONObject bodyJson1 = (JSONObject) msg1.get("body");
+        setResponsValue(bodyJson1, sb);
+        // FileWriter(sb.toString(),bizcode , bizcodeDesc);
+        System.out.println(sb.toString());
+        return reqJsonStr;
+    }
 
     /***
      * 字符串处理
@@ -343,22 +410,22 @@ public class DocumentGeneratorServiceImpl {
     }
 
 
-    public static JSONObject createReqJson(String bizCode, String custNo, String tradeacco, String passwd, JSONObject bodyJson) {
+    public static JSONObject createReqJson(String bizCode, String custNo, String tradeacco, String passwd, JSONObject bodyJson, String isAuth) {
         JSONObject msgJson = new JSONObject();
         msgJson.put("head", setHeadJson(bizCode));
         msgJson.put("body", bodyJson);
-        msgJson.put("auth", setAuthJson(custNo, tradeacco, passwd));
+        if (StringUtils.isNotBlank(isAuth)) {
+            msgJson.put("auth", setAuthJson(custNo, tradeacco, passwd));
+        }
         JSONObject reqJson = new JSONObject();
         reqJson.put("msg", msgJson);
         // 签名
         reqJson.put("signtype", "m");
-        //  ef2c0ef8385db0effdda73fad2cf32b0
-        // 167eef0c6c834b5b94322ecbf87ab108 1003
-        // ef2c0ef8385db0effdda73fad2cf32b0 1000
-        // c46b9b4dabae425a9daabbe16c8994df  00
-        // ef2c0ef8385db0effdda73fad2cf32b0   1000
         reqJson.put("sign", DigestUtils.md5Hex((msgJson.toString() + sign)));
         return reqJson;
+    }
+    public static JSONObject createReqJson(String bizCode, String custNo, String tradeacco, String passwd, JSONObject bodyJson) {
+       return createReqJson(bizCode, custNo, tradeacco, passwd,  bodyJson, "");
     }
 
     /**
@@ -507,6 +574,11 @@ public class DocumentGeneratorServiceImpl {
         }
     }
 
+    // body 组装
+    public static JSONObject setBody(String bizcode, String custNo){
+        JSONObject bodyJson = new JSONObject();
+        return bodyJson;
+    }
 
 
 }
