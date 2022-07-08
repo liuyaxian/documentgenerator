@@ -22,7 +22,7 @@ public class FundBalanceRefresh {
     private static String password = "zlfundzlfund";
 
     public static List<FundBalanceInfo> queryFundBalanceInfoList(String custno) {
-        String sql = "{ call oqp_get_ebalanceandprofit_to_cache(?,?) }";
+        String sql = "{ call oqp_get_ebalanceandprofit_test_to_cache(?,?) }";
         return DbUtils2.queryCursorList(sql, (rs, row) ->{
             FundBalanceInfo fundBalanceInfo = new FundBalanceInfo();
             fundBalanceInfo.setFundid(rs.getString("fundid"));
@@ -51,13 +51,14 @@ public class FundBalanceRefresh {
             fundBalanceInfo.setTotalin(rs.getDouble("totalin"));
             fundBalanceInfo.setMktvalue(rs.getDouble("mktvalue"));
             fundBalanceInfo.setIncomeamt(rs.getDouble("incomeamt"));
+            fundBalanceInfo.setZlbalancetype(rs.getString("zlbalancetype"));
             return fundBalanceInfo;
         }, custno);
     }
 
 
     public static List<FundBalanceInfo> queryFundBalanceInfoList2(String custNo) throws Exception {
-        final String sql = "{call oqp_get_ebalanceandprofit_to_cache(?, ?)}";
+        final String sql = "{call oqp_get_ebalanceandprofit_test_to_cache(?, ?)}";
         Class.forName(classname);
 
         Connection connection = DriverManager.getConnection(url , user, password);
@@ -101,6 +102,7 @@ public class FundBalanceRefresh {
                         fundBalanceInfo.setTotalin(rs.getDouble("totalin"));
                         fundBalanceInfo.setMktvalue(rs.getDouble("mktvalue"));
                         fundBalanceInfo.setIncomeamt(rs.getDouble("incomeamt"));
+                        fundBalanceInfo.setZlbalancetype(rs.getString("zlbalancetype"));
                         list.add(fundBalanceInfo);
                     }
                 }
@@ -132,11 +134,11 @@ public class FundBalanceRefresh {
     }
 
     public static void main(String[] args) throws Exception {
-        String custno ="1001883979";
+        String custno ="1001883882";
         String _id ="202207011524313377100007";
         String collName = "fundbalance";
-        deleteCollMongoDb(collName, custno, "");
-        deleteCollMongoDb("tradeapply", custno, _id);
+//        deleteCollMongoDb(collName, custno, "");
+//        deleteCollMongoDb("tradeapply", custno, _id);
         List<FundBalanceInfo> fundBalanceInfos = queryFundBalanceInfoList2(custno);
         System.out.println("fundbalance 客户号："+ custno + " 刷新总数："+ fundBalanceInfos.size());
         pushCollMongoDb("fundbalance", fundBalanceInfos);

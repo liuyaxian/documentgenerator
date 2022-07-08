@@ -40,7 +40,19 @@ public class FundBalanceInfo {
     private String workdate;
     private String transid;
     private double redackamt;
+    private String zlbalancetype;
 
+    public double getTotalin() {
+        return totalin;
+    }
+
+    public String getZlbalancetype() {
+        return zlbalancetype;
+    }
+
+    public void setZlbalancetype(String zlbalancetype) {
+        this.zlbalancetype = zlbalancetype;
+    }
 
     public void setTotalin(double totalin) {
         this.totalin = totalin;

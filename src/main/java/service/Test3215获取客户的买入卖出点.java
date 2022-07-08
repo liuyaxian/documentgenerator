@@ -15,14 +15,15 @@ public class Test3215获取客户的买入卖出点 extends DocumentGeneratorSer
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883566";
+        String custNo =  "1001883450";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
         String passwd = "";
         JSONObject bodyJson =  setBody(bizcode, custNo);
+        String isAuth = "1";
         // 1001546198	1001883763
-        requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson);
+        requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson, isAuth);
     }
 
     public static  JSONObject setBody(String bizcode, String custNo){

@@ -15,8 +15,10 @@ public class Test3111 extends DocumentGeneratorServiceImpl {
         // 交易密码 111111
         String passwd = "";
         JSONObject  bodyJson =  setBody(bizcode, custNo);
+        String isAuth ="1";
         // 1001546198	1001883763
-        requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson);
+        requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson, isAuth);
+
     }
 
     public static  JSONObject setBody(String bizcode, String custNo){
