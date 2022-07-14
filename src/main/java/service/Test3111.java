@@ -9,7 +9,7 @@ public class Test3111 extends DocumentGeneratorServiceImpl {
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883882";
+        String custNo =  "1001883806";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
@@ -23,7 +23,7 @@ public class Test3111 extends DocumentGeneratorServiceImpl {
 
     public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("mctcustno", "1001883882");
+        bodyJson.put("mctcustno", "1001881527");
         return bodyJson;
     }
 }

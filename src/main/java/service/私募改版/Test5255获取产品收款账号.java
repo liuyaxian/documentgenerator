@@ -23,7 +23,7 @@ public class Test5255获取产品收款账号 extends DocumentGeneratorServiceIm
     public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
 
-        bodyJson.put("fundid","PF0002");
+        bodyJson.put("fundid","SQV744");
 
 
 

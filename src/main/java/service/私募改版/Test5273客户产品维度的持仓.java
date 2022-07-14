@@ -9,7 +9,7 @@ public class Test5273客户产品维度的持仓 extends DocumentGeneratorServic
     private static final  String bizcodeDesc = "客户产品维度的持仓";
 
     public static void main(String[] args) throws Exception {
-        // 需要鉴权的接口 custNo 不为为空 1001883450 1001883516  1001883450
+        // 需要鉴权的接口 custNo 不为为空 1001883450 1001883516  1001883450  预约赎回 1001883979
         String custNo =  "1001883450";
         // 需要数据交易密码的接口
         String tradeacco = "";

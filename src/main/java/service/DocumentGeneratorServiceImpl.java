@@ -27,10 +27,10 @@ public class DocumentGeneratorServiceImpl {
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
 
     // 测试环境
-//    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
+    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIBHJR/OpenAPI.do";
     // 开发环境
-    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
+//    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
 
 
     private static final  String mctcode = "1000";
@@ -140,8 +140,10 @@ public class DocumentGeneratorServiceImpl {
 //        }
         JSONObject jsonObj = JSONObject.fromObject(responseStr);
         JSONObject msg1 = (JSONObject) jsonObj.get("msg");
-        JSONObject bodyJson1 = (JSONObject) msg1.get("body");
-        setResponsValue(bodyJson1, sb);
+        if (msg1 != null){
+            JSONObject bodyJson1 = (JSONObject) msg1.get("body");
+            setResponsValue(bodyJson1, sb);
+        }
        // FileWriter(sb.toString(),bizcode , bizcodeDesc);
         System.out.println(sb.toString());
         return reqJsonStr;
@@ -317,12 +319,15 @@ public class DocumentGeneratorServiceImpl {
             return;
         }
         if (bodyJson.containsKey("datalist")){
-            JSONArray list = bodyJson.getJSONArray("datalist");
-            if (list == null || list.size() ==0){
-                 return;
+            if (bodyJson.get("datalist") instanceof JSONArray) {
+                JSONArray list = bodyJson.getJSONArray("datalist");
+                if (list == null || list.size() == 0) {
+                    return;
+                }
+                JSONObject bodyJson1 =  list.getJSONObject(0);
+                setTableValue(bodyJson1, sb,  " body/datalist/");
             }
-            JSONObject bodyJson1 =  list.getJSONObject(0);
-            setTableValue(bodyJson1, sb,  " body/datalist/");
+
 
 //            JSONObject bodyJson1 =  list.getJSONObject(0);
 //            setTableValue(bodyJson1, sb,  " body/datalist/");

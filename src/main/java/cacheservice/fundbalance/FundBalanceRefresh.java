@@ -52,6 +52,7 @@ public class FundBalanceRefresh {
             fundBalanceInfo.setMktvalue(rs.getDouble("mktvalue"));
             fundBalanceInfo.setIncomeamt(rs.getDouble("incomeamt"));
             fundBalanceInfo.setZlbalancetype(rs.getString("zlbalancetype"));
+            fundBalanceInfo.setPartnerno(rs.getString("partnerno"));
             return fundBalanceInfo;
         }, custno);
     }
@@ -103,6 +104,7 @@ public class FundBalanceRefresh {
                         fundBalanceInfo.setMktvalue(rs.getDouble("mktvalue"));
                         fundBalanceInfo.setIncomeamt(rs.getDouble("incomeamt"));
                         fundBalanceInfo.setZlbalancetype(rs.getString("zlbalancetype"));
+                        fundBalanceInfo.setPartnerno(rs.getString("partnerno"));
                         list.add(fundBalanceInfo);
                     }
                 }
@@ -134,7 +136,7 @@ public class FundBalanceRefresh {
     }
 
     public static void main(String[] args) throws Exception {
-        String custno ="1001883882";
+        String custno ="1001883979";
         String _id ="202207011524313377100007";
         String collName = "fundbalance";
 //        deleteCollMongoDb(collName, custno, "");

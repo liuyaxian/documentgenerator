@@ -41,6 +41,15 @@ public class FundBalanceInfo {
     private String transid;
     private double redackamt;
     private String zlbalancetype;
+    private String partnerno;
+
+    public String getPartnerno() {
+        return partnerno;
+    }
+
+    public void setPartnerno(String partnerno) {
+        this.partnerno = partnerno;
+    }
 
     public double getTotalin() {
         return totalin;

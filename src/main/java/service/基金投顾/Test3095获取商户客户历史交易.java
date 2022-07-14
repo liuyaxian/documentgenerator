@@ -16,22 +16,23 @@ public class Test3095获取商户客户历史交易  extends DocumentGeneratorSe
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883516";
+        String custNo =  "1001881527";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
         String passwd = "111111";
         JSONObject bodyJson =  setBody(bizcode, custNo);
         // 1001546198	1001883763
-        requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson);
+        String isAuth = "1";
+        requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson, isAuth);
     }
 
     public static JSONObject setBody(String bizcode, String custNo){
 
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("mctcustno", "1001883516");
+        bodyJson.put("mctcustno", "1001882171");
         bodyJson.put("mainflag", "1");
-        bodyJson.put("tradetype", "tg");
+        bodyJson.put("tradetype", "zlpay");
 
         return bodyJson;
     }
