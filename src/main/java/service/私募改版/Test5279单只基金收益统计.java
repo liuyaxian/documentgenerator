@@ -23,9 +23,9 @@ public class Test5279单只基金收益统计 extends DocumentGeneratorServiceIm
     public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
         bodyJson.put("fundid", "SCW165");
-        bodyJson.put("period", "RET_3M");
-        bodyJson.put("mctcustno", "1001883450");
-        bodyJson.put("tradeacco", "1001545788");
+        bodyJson.put("period", "RET_1M");
+//        bodyJson.put("mctcustno", "1001883450");
+//        bodyJson.put("tradeacco", "1001545788");
 
         return bodyJson;
     }

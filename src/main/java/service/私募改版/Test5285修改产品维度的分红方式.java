@@ -22,7 +22,7 @@ public class Test5285修改产品维度的分红方式 extends DocumentGenerator
 
     public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("fundid", "ST4069");
+        bodyJson.put("fundid", "SCW165");
         bodyJson.put("dividendtype", "1");
 
         return bodyJson;
