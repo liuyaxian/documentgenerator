@@ -26,7 +26,7 @@ public class Test3215获取客户的买入卖出点 extends DocumentGeneratorSer
         requestUrl(custNo, tradeacco, passwd, bizcode, bizcodeDesc, bodyJson, isAuth);
     }
 
-    public static  JSONObject setBody(String bizcode, String custNo){
+    public static  JSONObject setBody(){
         JSONObject bodyJson = new JSONObject();
         bodyJson.put("fundid", "SCW165");
         bodyJson.put("startdate", "20180101");

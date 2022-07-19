@@ -1,15 +1,15 @@
 package service;
 
 
-import org.apache.commons.httpclient.Header;
-import service.util.DESEncHelper;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.lang.StringUtils;
+import service.util.DESEncHelper;
 
 import java.io.*;
 import java.sql.Connection;
@@ -17,7 +17,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.UUID;
 
 public class DocumentGeneratorServiceImpl {
 
@@ -27,10 +29,10 @@ public class DocumentGeneratorServiceImpl {
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
 
     // 测试环境
-//    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
+    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIBHJR/OpenAPI.do";
     // 开发环境
-    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
+//    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
 
 
     private static final  String mctcode = "1000";
@@ -161,8 +163,11 @@ public class DocumentGeneratorServiceImpl {
         method.setRequestHeader("Content-Type", CONTENTTYPE);
         method.setRequestBody(param);
         method.setParameter("bizcode",bizcode);
+
         method.setDoAuthentication(true);
         HttpClient client = new HttpClient();
+        // 代理
+//        client.getHostConfiguration().setProxy("127.0.0.1", 7890);
         client.executeMethod(method);
         return  writeWords(method, bizcode, bizcodeDesc, reqJson, isAuth);
     }
