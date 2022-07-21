@@ -1,7 +1,8 @@
-package service;
+package service.客户信息相关接口;
 
 import com.alibaba.fastjson.JSON;
 import net.sf.json.JSONObject;
+import service.DocumentGeneratorServiceImpl;
 import service.io.vo.FundInfo;
 
 /***

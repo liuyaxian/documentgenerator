@@ -1,21 +1,22 @@
-package service;
+package service.客户信息相关接口;
 
 import net.sf.json.JSONObject;
+import service.DocumentGeneratorServiceImpl;
 
 /**
  * @desc:
  * @author: admin
- * @since: 2021/12/21 15:43
+ * @since: 2022/1/12 13:51
  * @history:
  */
-public class Test3221基金管理人管理规模和年化回报 extends DocumentGeneratorServiceImpl {
+public class Test2013静默登录  extends DocumentGeneratorServiceImpl {
 
-    private static final  String bizcode = "3221";
-    private static final  String bizcodeDesc = "基金管理人管理规模和年化回报";
+    private static final  String bizcode = "2013";
+    private static final  String bizcodeDesc = "静默登录";
 
     public static void main(String[] args) throws Exception {
         // 需要鉴权的接口 custNo 不为为空
-        String custNo =  "1001883516";
+        String custNo =  "1001883551";
         // 需要数据交易密码的接口
         String tradeacco = "";
         // 交易密码 111111
@@ -27,8 +28,12 @@ public class Test3221基金管理人管理规模和年化回报 extends Document
 
     public static  JSONObject setBody(String bizcode, String custNo){
         JSONObject bodyJson = new JSONObject();
-        bodyJson.put("managerid", "302001675");
+
+        bodyJson.put("ciphertext","duYdCpHms5CMNobTkIveR3izHL0df0LILXqZJ/GWmWjrGwKFaWwFuT2jZPv1mwOXIgNjbM6IhIAiXaKIQWTAGn/rhxEsgZ8ltkD128a/F7Y93wB89n5HuwmGf8mrUA1u");
+
+
 
         return bodyJson;
     }
 }
+

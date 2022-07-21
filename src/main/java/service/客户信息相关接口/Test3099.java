@@ -1,6 +1,7 @@
-package service;
+package service.客户信息相关接口;
 
 import net.sf.json.JSONObject;
+import service.DocumentGeneratorServiceImpl;
 
 public class Test3099 extends DocumentGeneratorServiceImpl {
 

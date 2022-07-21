@@ -1,7 +1,8 @@
-package service;
+package service.客户信息相关接口;
 
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
+import service.DocumentGeneratorServiceImpl;
 
 /**
  * @desc:
