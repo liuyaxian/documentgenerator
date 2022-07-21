@@ -24,15 +24,15 @@ import java.util.UUID;
 public class DocumentGeneratorServiceImpl {
 
     // uat
-//    private static final  String url = "https://appapitest.zlfund.cn/OpenAPI.do";
-
-//    private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
+//    private static final  String url = "https://merchantapi.zlfund.cn/miduo/OpenAPI.do";
+//
+    private static final  String url = "https://officeapi.zlfund.cn/OpenAPI.do";
 
     // 测试环境
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIXZG/OpenAPI.do";
 //    private static final  String url = "https://officeapi.zlfund.cn/OpenAPIBHJR/OpenAPI.do";
     // 开发环境
-    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
+//    private static final  String url = "http://localhost:8080/OpenAPI/OpenAPI.do";
 
 
     private static final  String mctcode = "1000";
@@ -40,7 +40,11 @@ public class DocumentGeneratorServiceImpl {
     // 167eef0c6c834b5b94322ecbf87ab108 1003
     // c46b9b4dabae425a9daabbe16c8994df  00
     // 3c05f9e358214fc78cb8a1a0020540f6  0040
+    // e65rdbf2ffed96sdhat2w00bftpg5ec3d  0031
+//    private static final  String sign = "ef2c0ef8385db0effdda73fad2cf32b0";
     private static final  String sign = "ef2c0ef8385db0effdda73fad2cf32b0";
+
+
     private static final  String version = "4.0";
     private static final  String appversion = "4.5.4";
     private static final  String appversionCode = "";
@@ -454,6 +458,12 @@ public class DocumentGeneratorServiceImpl {
         authJson.put("mctcustno", custNo);
         authJson.put("sessionkey", getSessionkey(custNo));
         authJson.put("tradeacco", tradeacco);
+//        authJson.put("authtype", "0");
+//        authJson.put("mctcustno", custNo);
+//        authJson.put("idno", custNo);
+//        authJson.put("sessionkey", getSessionkey(custNo));
+//        authJson.put("tradeacco", tradeacco);
+//        authJson.put("authcode", "f9c6e9561025891e916316ef757c1da9");
 
 
 
